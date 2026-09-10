@@ -418,8 +418,8 @@
     <div class="solution-body">
       <div class="section-title">(1) の解答</div>
       <p>
-        得点が \(n\) 点となるのは、取り出したカードの全要素が昇順 \(a_1 < a_2 < \dots < a_n\) に並ぶ場合に限られる。<br>
-        \(n\) 枚のカードの並べ方の総数は全事象で \(n!\) 通りあり、そのうち完全な昇順になる並べ方は \((1, 2, \dots, n)\) の 1 通りである。<br>
+        得点が \(n\) 点となるのは、取り出したカードが \(a_1 < a_2 < \dots < a_n\) と並ぶ場合に限られる。<br>
+        \(n\) 枚のカードの並べ方の総数は \(n!\) 通りあり、そのうち完全な昇順になる並べ方は \((1, 2, \dots, n)\) の 1 通りである。<br>
         したがって、求める確率は \(\displaystyle \frac{1}{n!}\) である。
       </p>
 
@@ -442,10 +442,10 @@
 
       <div class="section-title">(3) の解答</div>
       <p>
-        得点を表す確率変数を \(X\) とすると、期待値 \(E(n)\) の定義より、
+        得点を表す確率変数を \(X\) とすると、期待値 \(E(n)\) は、
         $$E(n) = \sum_{k=1}^{n-1} k \cdot P(X=k) + n \cdot P(X=n) = \sum_{k=1}^{n-1} \frac{k^2}{(k+1)!} + \frac{n}{n!}$$
         ここで、\(\frac{k^2}{(k+1)!}\) の分子を変形すると、
-        $$\frac{k^2}{(k+1)!} = \frac{(k+1)^2 - 2(k+1) + 1}{(k+1)!} = \left( \frac{1}{(k-1)!} - \frac{1}{k!} \right) + \frac{1}{(k+1)!}$$
+        $$\frac{k^2}{(k+1)!} = \frac{k(k+1) - (k+1) + 1}{(k+1)!} = \left( \frac{1}{(k-1)!} - \frac{1}{k!} \right) + \frac{1}{(k+1)!}$$
         これを \(k=1\) から \(n-1\) まで足し合わせると、第一項の和は相殺により、
         $$\sum_{k=1}^{n-1} \frac{k^2}{(k+1)!} = \left( 1 - \frac{1}{(n-1)!} \right) + \sum_{j=2}^{n} \frac{1}{j!} = \sum_{j=1}^{n} \frac{1}{j!} - \frac{1}{(n-1)!}$$
         ここに第二項 \(\frac{n}{n!} = \frac{1}{(n-1)!}\) を加えると、
@@ -480,9 +480,9 @@
         が成り立つ。
       </p>
       <p>
-        ここで、\(n \ge 2\) において \(|a_{n+1} - 1|\) を変形すると、
+        ここで、\(n \ge 2\) において
         $$|a_{n+1} - 1| = \left| \sqrt{\frac{1+a_n}{2}} - 1 \right| = \frac{\left| \frac{1+a_n}{2} - 1 \right|}{\sqrt{\frac{1+a_n}{2}} + 1} = \frac{|a_n - 1|}{2(a_{n+1} + 1)}$$
-        となる。
+        また、
       </p>
       <p>
         \(a_{n+1} \ge \frac{1}{\sqrt{2}} > 0\) より \(2(a_{n+1} + 1) > 2\) であるから、
@@ -499,7 +499,6 @@
         $$\lim_{n \to \infty} |a_n - 1| = 0$$
         すなわち、
         $$\lim_{n \to \infty} a_n = 1$$
-        である。
       </p>
 
       <div class="final-answer-box">
@@ -530,18 +529,18 @@
 
       <div class="section-title">(2) の解答</div>
       <p>
-        部分積分法を適用すると、
+        部分積分より、
         $$I_{n+2} = \int_0^{\frac{\pi}{2}} \sin^{n+1} x (-\cos x)' \, dx = \left[ -\sin^{n+1} x \cos x \right]_0^{\frac{\pi}{2}} + (n+1) \int_0^{\frac{\pi}{2}} \sin^n x \cos^2 x \, dx$$
         第一項は \(0\) であり、\(\cos^2 x = 1 - \sin^2 x\) を代入すると、
         $$I_{n+2} = (n+1) \int_0^{\frac{\pi}{2}} \sin^n x (1 - \sin^2 x) \, dx = (n+1) I_n - (n+1) I_{n+2}$$
-        整理すると \((n+2) I_{n+2} = (n+1) I_n\) となるため、両辺を \(n+2\) で割ることで示される。
+        整理すると \((n+2) I_{n+2} = (n+1) I_n\) となるため、両辺を \(n+2\) で割ることで次を得る。
         $$I_{n+2} = \frac{n+1}{n+2} I_n$$
       </p>
 
       <div class="section-title">(3) の解答</div>
       <p>
         (2) の結果より \(\displaystyle \frac{I_{2n-1}}{I_{2n+1}} = \frac{2n+1}{2n} = 1 + \frac{1}{2n}\) である。<br>
-        \(\displaystyle \lim_{n \to \infty} \left(1 + \frac{1}{2n}\right) = 1\) となるため、(1) の不等式にはさみうちの原理を適用すると、
+        \(\displaystyle \lim_{n \to \infty} \left(1 + \frac{1}{2n}\right) = 1\) となるため、(1) の不等式とはさみうちの原理より、
         $$\lim_{n \to \infty} \frac{I_{2n}}{I_{2n+1}} = 1$$
       </p>
 
@@ -549,7 +548,7 @@
       <p>
         (2) の漸化式を繰り返し用いると（\(I_0 = \frac{\pi}{2}, I_1 = 1\)）、
         $$I_{2n} = \frac{(2n)!}{2^{2n} (n!)^2} \frac{\pi}{2}, \quad I_{2n+1} = \frac{2^{2n} (n!)^2}{(2n+1)!}$$
-        比をとると、
+        よって、
         $$\frac{I_{2n}}{I_{2n+1}} = \frac{\{(2n)!\}^2 (2n+1) \pi}{2^{4n+1} (n!)^4}$$
         ここで \(\displaystyle a_n = \frac{n! e^n}{n^n \sqrt{n}}\) より \(\displaystyle n! = \frac{a_n n^n \sqrt{n}}{e^n}\) および \(\displaystyle (2n)! = \frac{a_{2n} (2n)^{2n} \sqrt{2n}}{e^{2n}}\) を代入して整理すると、
         $$\frac{I_{2n}}{I_{2n+1}} = \frac{a_{2n}^2}{a_n^4} \left(2 + \frac{1}{n}\right) \pi$$
