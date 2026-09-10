@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -166,7 +166,7 @@
     margin-top: 40px;
   }
 
-  /* ==================== 問題画面スタイル ==================== */
+  /* ==================== 問題・解答画面共通スタイル ==================== */
   .problem-view-wrapper {
     padding: 20px;
   }
@@ -199,13 +199,17 @@
     background-color: #444;
   }
 
-  .problem-title {
+  .problem-title, .answer-title {
     font-size: 14pt;
     font-weight: bold;
     margin-bottom: 20px;
     border-bottom: 2px solid #000;
     padding-bottom: 5px;
   }
+  .answer-title {
+    border-bottom: 2px double #000;
+  }
+
   .problem-body {
     font-size: 11pt;
     text-align: justify;
@@ -224,6 +228,34 @@
   .sub-question {
     margin-top: 24px;
     padding-left: 10px;
+  }
+
+  /* 解答・解説専用スタイル */
+  .section-title {
+    font-size: 11pt;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border-left: 4px solid #000;
+    padding: 4px 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .solution-body {
+    font-size: 10pt;
+    line-height: 1.7;
+  }
+  .final-answer-box {
+    border: 2px solid #000;
+    padding: 12px;
+    margin-top: 30px;
+    background-color: #fafafa;
+  }
+  .final-answer-title {
+    font-weight: bold;
+    font-size: 10.5pt;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
   }
 </style>
 <script>
@@ -254,6 +286,7 @@
   </section>
 
   <main class="main-content">
+    <!-- 問題セクション -->
     <h2 class="section-label">問題</h2>
     <div class="problem-grid">
       <div class="card" onclick="showView('problem1-view')">
@@ -267,6 +300,23 @@
       <div class="card" onclick="showView('problem3-view')">
         <div class="card-title">数列の極限2</div>
         <div class="card-footer">問題を開く &rarr;</div>
+      </div>
+    </div>
+
+    <!-- 解答・解説セクション -->
+    <h2 class="section-label" style="margin-top: 48px;">解答・解説</h2>
+    <div class="problem-grid">
+      <div class="card" onclick="showView('answer1-view')">
+        <div class="card-title">場合の数と確率1</div>
+        <div class="card-footer">解答を開く &rarr;</div>
+      </div>
+      <div class="card" onclick="showView('answer2-view')">
+        <div class="card-title">数列の極限1</div>
+        <div class="card-footer">解答を開く &rarr;</div>
+      </div>
+      <div class="card" onclick="showView('answer3-view')">
+        <div class="card-title">数列の極限2</div>
+        <div class="card-footer">解答を開く &rarr;</div>
       </div>
     </div>
   </main>
@@ -354,6 +404,166 @@
       </div>
       <div class="sub-question">
         (4) 定数 \(C\) の値を求めよ。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 解答 1 ==================== -->
+<div id="answer1-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="answer-title">場合の数と確率1 - 解答・解説</div>
+
+    <div class="solution-body">
+      <div class="section-title">(1) の解答</div>
+      <p>
+        得点が \(n\) 点となるのは、取り出したカードの全要素が昇順 \(a_1 < a_2 < \dots < a_n\) に並ぶ場合に限られる。<br>
+        \(n\) 枚のカードの並べ方の総数は全事象で \(n!\) 通りあり、そのうち完全な昇順になる並べ方は \((1, 2, \dots, n)\) の 1 通りである。<br>
+        したがって、求める確率は \(\displaystyle \frac{1}{n!}\) である。
+      </p>
+
+      <div class="section-title">(2) の解答</div>
+      <p>
+        得点が \(k\) 点（\(1 \le k \le n-1\)）となる条件は、\(a_1 < a_2 < \dots < a_k\) かつ \(a_k > a_{k+1}\) が成り立つことである。<br>
+        条件を満たす並べ方の総数を以下のように決定する。
+      </p>
+      <ol style="margin-left: 20px;">
+        <li>最初の \(k+1\) つの位置に配置する \(k+1\) 枚のカードの選び方は \(\binom{n}{k+1}\) 通り。</li>
+        <li>選ばれた \(k+1\) 枚の中で最大の値は \(a_k\) に確定する。残りの \(k\) 枚のうち \(a_{k+1}\) に入る数の選び方は \(k\) 通り。残った \(k-1\) 枚の数は \(a_1 < a_2 < \dots < a_{k-1}\) に自動的（1通り）に配置される。</li>
+        <li>残り \(n-(k+1)\) 枚のカードの並べ方は \((n-k-1)!\) 通り。</li>
+      </ol>
+      <p style="margin-top: 10px;">
+        並べ方の総数は、
+        $$\binom{n}{k+1} \times k \times (n-k-1)! = \frac{n!}{(k+1)!(n-k-1)!} \times k \times (n-k-1)! = \frac{n! \cdot k}{(k+1)!}$$
+        全事象 \(n!\) 通りで割ることにより、求める確率は、
+        $$\frac{\frac{n! \cdot k}{(k+1)!}}{n!} = \frac{k}{(k+1)!}$$
+      </p>
+
+      <div class="section-title">(3) の解答</div>
+      <p>
+        得点を表す確率変数を \(X\) とすると、期待値 \(E(n)\) の定義より、
+        $$E(n) = \sum_{k=1}^{n-1} k \cdot P(X=k) + n \cdot P(X=n) = \sum_{k=1}^{n-1} \frac{k^2}{(k+1)!} + \frac{n}{n!}$$
+        ここで、\(\frac{k^2}{(k+1)!}\) の分子を変形すると、
+        $$\frac{k^2}{(k+1)!} = \frac{(k+1)^2 - 2(k+1) + 1}{(k+1)!} = \left( \frac{1}{(k-1)!} - \frac{1}{k!} \right) + \frac{1}{(k+1)!}$$
+        これを \(k=1\) から \(n-1\) まで足し合わせると、第一項の和は相殺により、
+        $$\sum_{k=1}^{n-1} \frac{k^2}{(k+1)!} = \left( 1 - \frac{1}{(n-1)!} \right) + \sum_{j=2}^{n} \frac{1}{j!} = \sum_{j=1}^{n} \frac{1}{j!} - \frac{1}{(n-1)!}$$
+        ここに第二項 \(\frac{n}{n!} = \frac{1}{(n-1)!}\) を加えると、
+        $$E(n) = \sum_{j=1}^{n} \frac{1}{j!}$$
+        与えられた条件 \(\lim_{n \to \infty} \sum_{j=0}^{n} \frac{1}{j!} = e\) を用いると、
+        $$\lim_{n \to \infty} E(n) = \lim_{n \to \infty} \left( \sum_{j=0}^{n} \frac{1}{j!} - \frac{1}{0!} \right) = e - 1$$
+      </p>
+
+      <div class="final-answer-box">
+        <div class="final-answer-title">【解答一覧】</div>
+        (1) \(\displaystyle \frac{1}{n!}\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (2) \(\displaystyle \frac{k}{(k+1)!}\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (3) \(\displaystyle e - 1\)
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 解答 2 ==================== -->
+<div id="answer2-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="answer-title">数列の極限1 - 解答・解説</div>
+
+    <div class="solution-body">
+      <div class="section-title">【解答】</div>
+      <p>
+        \(a_1 = \alpha \ge -1\) より、
+        $$a_2 = \sqrt{\frac{1+\alpha}{2}} \ge 0$$
+        となる。漸化式の条件 \(a_{n+1} \ge 0\) より、\(n \ge 2\) において各項は \(a_n \ge 0\) であり、
+        $$a_{n+1} = \sqrt{\frac{1+a_n}{2}} \ge \frac{1}{\sqrt{2}}$$
+        が成り立つ。
+      </p>
+      <p>
+        ここで、\(n \ge 2\) において \(|a_{n+1} - 1|\) を変形すると、
+        $$|a_{n+1} - 1| = \left| \sqrt{\frac{1+a_n}{2}} - 1 \right| = \frac{\left| \frac{1+a_n}{2} - 1 \right|}{\sqrt{\frac{1+a_n}{2}} + 1} = \frac{|a_n - 1|}{2(a_{n+1} + 1)}$$
+        となる。
+      </p>
+      <p>
+        \(a_{n+1} \ge \frac{1}{\sqrt{2}} > 0\) より \(2(a_{n+1} + 1) > 2\) であるから、
+        $$|a_{n+1} - 1| < \frac{1}{2} |a_n - 1| \quad (n \ge 2)$$
+        が得られる。
+      </p>
+      <p>
+        これを繰り返し適用すると、
+        $$0 \le |a_n - 1| < \left(\frac{1}{2}\right)^{n-2} |a_2 - 1| \quad (n \ge 2)$$
+        となる。
+      </p>
+      <p>
+        \(n \to \infty\) のとき \(\displaystyle \left(\frac{1}{2}\right)^{n-2} |a_2 - 1| \to 0\) であるから、はさみうちの原理より、
+        $$\lim_{n \to \infty} |a_n - 1| = 0$$
+        すなわち、
+        $$\lim_{n \to \infty} a_n = 1$$
+        である。
+      </p>
+
+      <div class="final-answer-box">
+        <div class="final-answer-title">【答】</div>
+        $$\lim_{n \to \infty} a_n = 1$$
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 解答 3 ==================== -->
+<div id="answer3-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="answer-title">数列の極限2 - 解答・解説</div>
+
+    <div class="solution-body">
+      <div class="section-title">(1) の解答</div>
+      <p>
+        \(0 < x < \frac{\pi}{2}\) において \(0 < \sin x < 1\) より、各辺に \(\sin^{2n-1} x > 0\) を掛けると、
+        $$0 < \sin^{2n+1} x < \sin^{2n} x < \sin^{2n-1} x$$
+        \(0\) から \(\frac{\pi}{2}\) まで定積分すると、
+        $$\int_0^{\frac{\pi}{2}} \sin^{2n+1} x \, dx < \int_0^{\frac{\pi}{2}} \sin^{2n} x \, dx < \int_0^{\frac{\pi}{2}} \sin^{2n-1} x \, dx$$
+        すなわち \(I_{2n+1} < I_{2n} < I_{2n-1}\) となる。<br>
+        \(I_{2n+1} > 0\) より、各辺を \(I_{2n+1}\) で割ることで不等式が示される。
+        $$1 < \frac{I_{2n}}{I_{2n+1}} < \frac{I_{2n-1}}{I_{2n+1}}$$
+      </p>
+
+      <div class="section-title">(2) の解答</div>
+      <p>
+        部分積分法を適用すると、
+        $$I_{n+2} = \int_0^{\frac{\pi}{2}} \sin^{n+1} x (-\cos x)' \, dx = \left[ -\sin^{n+1} x \cos x \right]_0^{\frac{\pi}{2}} + (n+1) \int_0^{\frac{\pi}{2}} \sin^n x \cos^2 x \, dx$$
+        第一項は \(0\) であり、\(\cos^2 x = 1 - \sin^2 x\) を代入すると、
+        $$I_{n+2} = (n+1) \int_0^{\frac{\pi}{2}} \sin^n x (1 - \sin^2 x) \, dx = (n+1) I_n - (n+1) I_{n+2}$$
+        整理すると \((n+2) I_{n+2} = (n+1) I_n\) となるため、両辺を \(n+2\) で割ることで示される。
+        $$I_{n+2} = \frac{n+1}{n+2} I_n$$
+      </p>
+
+      <div class="section-title">(3) の解答</div>
+      <p>
+        (2) の結果より \(\displaystyle \frac{I_{2n-1}}{I_{2n+1}} = \frac{2n+1}{2n} = 1 + \frac{1}{2n}\) である。<br>
+        \(\displaystyle \lim_{n \to \infty} \left(1 + \frac{1}{2n}\right) = 1\) となるため、(1) の不等式にはさみうちの原理を適用すると、
+        $$\lim_{n \to \infty} \frac{I_{2n}}{I_{2n+1}} = 1$$
+      </p>
+
+      <div class="section-title">(4) の解答</div>
+      <p>
+        (2) の漸化式を繰り返し用いると（\(I_0 = \frac{\pi}{2}, I_1 = 1\)）、
+        $$I_{2n} = \frac{(2n)!}{2^{2n} (n!)^2} \frac{\pi}{2}, \quad I_{2n+1} = \frac{2^{2n} (n!)^2}{(2n+1)!}$$
+        比をとると、
+        $$\frac{I_{2n}}{I_{2n+1}} = \frac{\{(2n)!\}^2 (2n+1) \pi}{2^{4n+1} (n!)^4}$$
+        ここで \(\displaystyle a_n = \frac{n! e^n}{n^n \sqrt{n}}\) より \(\displaystyle n! = \frac{a_n n^n \sqrt{n}}{e^n}\) および \(\displaystyle (2n)! = \frac{a_{2n} (2n)^{2n} \sqrt{2n}}{e^{2n}}\) を代入して整理すると、
+        $$\frac{I_{2n}}{I_{2n+1}} = \frac{a_{2n}^2}{a_n^4} \left(2 + \frac{1}{n}\right) \pi$$
+        両辺の \(n \to \infty\) における極限をとると、(3) の結果および \(\displaystyle \lim_{n \to \infty} a_n = C\)（\(C > 0\)）より、
+        $$1 = \frac{C^2}{C^4} \cdot 2\pi = \frac{2\pi}{C^2}$$
+        \(C > 0\) より、\(C = \sqrt{2\pi}\) である。
+      </p>
+
+      <div class="final-answer-box">
+        <div class="final-answer-title">【解答一覧】</div>
+        (1) 証明略 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (2) 証明略 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (3) \(1\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (4) \(\sqrt{2\pi}\)
       </div>
     </div>
   </div>
