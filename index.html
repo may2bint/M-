@@ -366,6 +366,11 @@
         <div class="card-title">数列の極限2</div>
         <div class="card-footer">問題を開く &rarr;</div>
       </div>
+      <div class="card" onclick="showView('problem4-view')">
+        <div class="card-title">空間図形1</div>
+        <div class="card-footer">問題を開く &rarr;</div>
+      </div>
+
     </div>
 
     <!-- 解答・解説セクション -->
@@ -383,6 +388,11 @@
         <div class="card-title">数列の極限2</div>
         <div class="card-footer">解答を開く &rarr;</div>
       </div>
+      <div class="card" onclick="showView('answer4-view')">
+        <div class="card-title">空間図形1</div>
+        <div class="card-footer">解答を開く &rarr;</div>
+      </div>
+
     </div>
   </main>
 
@@ -470,6 +480,26 @@
       <div class="sub-question">
         (4) 定数 \(C\) の値を求めよ。
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 問題 4 ==================== -->
+<div id="problem4-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="problem-title">空間図形1</div>
+    
+    <div class="problem-body">
+      <p>
+        \(a > 1\) とする。\(3\) 次元空間内に、点 \(\text{O}(0, 0, 0)\) を原点とし、底面が \(xy\) 平面上の正方形 \(\text{OABC}\) （ただし \(\text{A}(1, 0, 0)\), \(\text{B}(1, 1, 0)\), \(\text{C}(0, 1, 0)\)）であり、高さが \(a\) である直方体 \(\text{OABC-DEFG}\) がある。ただし、点 \(\text{D}, \text{E}, \text{F}, \text{G}\) の \(z\) 座標はすべて正とする。
+      </p>
+      <p>
+        上面の正方形 \(\text{DEFG}\) 上に点 \(\text{P}\) をとり、原点 \(\text{O}\) から点 \(\text{P}\) まで直方体の表面に沿ってリボンを長さが最も短くなるように巻きつける。このときのリボンの長さを \(l\) とする。
+      </p>
+      <p>
+        上面 \(\text{DEFG}\) 上において、\(l\) が最大となる点 \(\text{P}\) の座標を求め、またそのときの \(l\) の最大値を \(a\) を用いて表せ。
+      </p>
     </div>
   </div>
 </div>
@@ -628,6 +658,69 @@
         (2) 証明略 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         (3) \(1\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         (4) \(\sqrt{2\pi}\)
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 解答 4 ==================== -->
+<div id="answer4-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="answer-title">空間図形1 - 解答・解説</div>
+
+    <div class="solution-body">
+      <p>
+        上面 \(\text{DEFG}\) 上の点 \(\text{P}\) の座標を \((x, y, a)\) （ただし \(0 \le x \le 1,\ 0 \le y \le 1\)）とする。<br>
+        原点 \(\text{O}(0, 0, 0)\) から点 \(\text{P}\) に至る表面上の経路として、主要な \(4\) つの展開図上の距離を考える。
+      </p>
+      <p>
+        ① 前面 \(\text{OAED}\) を経由して上面に至る経路（辺 \(\text{DE}\) をまたぐ）：
+        $$l_1 = \sqrt{x^2 + (a+y)^2}$$
+        ② 左側面 \(\text{OCGD}\) を経由して上面に至る経路（辺 \(\text{DG}\) をまたぐ）：
+        $$l_2 = \sqrt{(a+x)^2 + y^2}$$
+        ③ 前面 \(\text{OAED}\) から右側面 \(\text{ABFE}\) を経由して上面に至る経路（辺 \(\text{AE}, \text{EF}\) をまたぐ）：
+        $$l_3 = \sqrt{(1+y)^2 + (a+1-x)^2}$$
+        ④ 左側面 \(\text{OCGD}\) から背面 \(\text{BCGF}\) を経由して上面に至る経路（辺 \(\text{CG}, \text{FG}\) をまたぐ）：
+        $$l_4 = \sqrt{(1+x)^2 + (a+1-y)^2}$$
+      </p>
+      <p>
+        したがって、最短経路の長さ \(l\) は \(l = \min(l_1, l_2, l_3, l_4)\) と表される。
+      </p>
+      <p>
+        ここで \(x\) と \(y\) に関する対称性より、\(y \ge x\) の領域を考えれば十分である。<br>
+        \(y \ge x\) のとき、
+        $$l_1^2 - l_2^2 = \{x^2 + (a+y)^2\} - \{(a+x)^2 + y^2\} = 2a(y-x) \ge 0 \implies l_1 \ge l_2$$
+        $$l_3^2 - l_4^2 = \{(1+y)^2 + (a+1-x)^2\} - \{(1+x)^2 + (a+1-y)^2\} = 2(a+2)(y-x) \ge 0 \implies l_3 \ge l_4$$
+        となるため、\(y \ge x\) における最短距離は \(l = \min(l_2, l_4)\) となる。
+      </p>
+      <p>
+        さらに、\(y \ge x\) において、\(l_2^2 = (a+x)^2 + y^2\) は \(y\) に関して単調増加であり、\(l_4^2 = (1+x)^2 + (a+1-y)^2\) は \(y\) に関して単調減少である。<br>
+        したがって、\(x\) を固定したとき、\(\min(l_2^2, l_4^2)\) が最大となるのは \(l_2^2 = l_4^2\) のときである。
+      </p>
+      <p>
+        \(l_2^2 = l_4^2\) を整理すると、
+        $$(a+x)^2 + y^2 = (1+x)^2 + (a+1-y)^2 \implies (a-1)x + (a+1)y = a+1$$
+        $$y = 1 - \frac{a-1}{a+1}x$$
+        これを \(l_2^2\) に代入した関数を \(h(x)\) とおくと、
+        $$h(x) = (a+x)^2 + \left(1 - \frac{a-1}{a+1}x\right)^2$$
+        微分すると \(h'(x) = 2(a+x) - 2\frac{a-1}{a+1}\left(1 - \frac{a-1}{a+1}x\right)\) であり、\(a > 1\) および \(x \ge 0\) のとき \(h'(x) > 0\) となるため、\(h(x)\) は単調増加である。
+      </p>
+      <p>
+        よって、\(y \ge x\) の条件を満たす範囲で \(x\) を最大にする、すなわち \(y = x\) となるときに \(l\) は最大となる。<br>
+        \((a-1)x + (a+1)x = a+1\) より、\(x = \frac{a+1}{2a}\) を得る。このとき \(y = \frac{a+1}{2a}\) である。
+      </p>
+      <p>
+        \(x = y = \frac{a+1}{2a}\) を \(l_2^2\) に代入すると、
+        $$l^2 = \left(a + \frac{a+1}{2a}\right)^2 + \left(\frac{a+1}{2a}\right)^2 = \left(\frac{2a^2+a+1}{2a}\right)^2 + \left(\frac{a+1}{2a}\right)^2$$
+        $$l^2 = \frac{4a^4 + 4a^3 + 6a^2 + 4a + 2}{4a^2} = \frac{(a^2+1)(2a^2+2a+1)}{2a^2}$$
+        したがって、\(l = \frac{\sqrt{2(a^2+1)(2a^2+2a+1)}}{2a}\) となる。
+      </p>
+
+      <div class="final-answer-box">
+        <div class="final-answer-title">【答】</div>
+        点 \(\text{P}\) の座標：\(\displaystyle \left(\frac{a+1}{2a},\ \frac{a+1}{2a},\ a\right)\)<br>
+        \(l\) の最大値：\(\displaystyle \frac{\sqrt{2(a^2+1)(2a^2+2a+1)}}{2a}\) &nbsp;&nbsp;（または \(\displaystyle \frac{\sqrt{4a^4+4a^3+6a^2+4a+2}}{2a}\)）
       </div>
     </div>
   </div>
