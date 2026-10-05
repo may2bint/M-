@@ -751,5 +751,56 @@
   </div>
 </div>
 
+<!-- ==================== 解答 5 ==================== -->
+<div id="answer5-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="answer-title">微分法の応用1 - 解答・解説</div>
+
+    <div class="solution-body">
+      <div class="section-title">【解答・解説】</div>
+      <p>
+        \(f(x) = x \log x \ (x > 0)\) とおく。<br>
+        \(f'(x) = \log x + 1\), \(f''(x) = \frac{1}{x} > 0\) より、\(y = f(x)\) は \(x > 0\) において下に凸な関数である。……①
+      </p>
+      <p>
+        \(x = \frac{1}{n}\) における \(y = f(x)\) の接線の方程式は、
+        $$y - f\left(\frac{1}{n}\right) = f'\left(\frac{1}{n}\right)\left(x - \frac{1}{n}\right)$$
+        $$y = (1 - \log n)x - \frac{1}{n}$$
+      </p>
+      <p>
+        ①より、接線は常に曲線 \(y = f(x)\) の下側に位置するため、すべての \(x > 0\) に対して次の不等式が成り立つ。
+        $$x \log x \ge (1 - \log n)x - \frac{1}{n} \quad \dots\dots ②$$
+      </p>
+      <p>
+        不等式 ② の \(x\) に \(x_1, x_2, \dots, x_n\) をそれぞれ代入して足し合わせると、
+        $$\sum_{k=1}^{n} x_k \log x_k \ge \sum_{k=1}^{n} \left\{ (1 - \log n)x_k - \frac{1}{n} \right\}$$
+        $$= (1 - \log n)\sum_{k=1}^{n} x_k - \sum_{k=1}^{n} \frac{1}{n}$$
+        \(\sum_{k=1}^{n} x_k = 1\) より、
+        $$\sum_{k=1}^{n} x_k \log x_k \ge (1 - \log n) \cdot 1 - 1 = -\log n$$
+      </p>
+      <p>
+        等号成立条件は、すべての \(k \ (1 \le k \le n)\) について \(x = x_k\) が接点 \(x = \frac{1}{n}\) と一致するとき、すなわち
+        $$x_1 = x_2 = \dots = x_n = \frac{1}{n}$$
+        のときである。<br>
+        したがって、\(\displaystyle \sum_{k=1}^{n} x_k \log x_k\) の最小値は \(-\log n\) となる。
+      </p>
+      <p>
+        ここで、対数の性質より、
+        $$\log \left( x_1^{x_1} \cdot x_2^{x_2} \cdots x_n^{x_n} \right) = \log x_1^{x_1} + \log x_2^{x_2} + \dots + \log x_n^{x_n} = \sum_{k=1}^{n} x_k \log x_k$$
+        であるから、\(\log \left( x_1^{x_1} \cdot x_2^{x_2} \cdots x_n^{x_n} \right)\) の最小値も \(-\log n = \log \frac{1}{n}\) である。
+      </p>
+      <p>
+        底 \(e > 1\) より、求める最小値は \(\displaystyle \frac{1}{n}\) となる。
+      </p>
+
+      <div class="final-answer-box">
+        <div class="final-answer-title">【答】</div>
+        $$\frac{1}{n}$$
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
