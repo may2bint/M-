@@ -1,6 +1,6 @@
 'use strict';
 const PREFIX = 'mchart-app-';
-const CACHE = PREFIX + 'v1';
+const CACHE = PREFIX + 'v2-original-layout';
 const ROOT = new URL('./', self.location.href).href;
 const SHELL = ['./','./index.html','./app.js','./manifest.webmanifest','./app-icons/icon-192.png','./app-icons/icon-512.png'];
 self.addEventListener('install', event => {
@@ -36,4 +36,5 @@ self.addEventListener('fetch', event => {
     }
   })());
 });
+
 
