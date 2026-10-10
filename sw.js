@@ -1,8 +1,8 @@
 'use strict';
 const PREFIX = 'mchart-app-';
-const CACHE = PREFIX + 'v2-original-layout';
+const CACHE = PREFIX + 'v3-icon-path-fix';
 const ROOT = new URL('./', self.location.href).href;
-const SHELL = ['./','./index.html','./app.js','./manifest.webmanifest','./app-icons/icon-192.png','./app-icons/icon-512.png'];
+const SHELL = ['./','./index.html','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL.map(path => new URL(path, ROOT).href))));
 });
@@ -36,5 +36,6 @@ self.addEventListener('fetch', event => {
     }
   })());
 });
+
 
 
