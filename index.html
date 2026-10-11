@@ -762,54 +762,31 @@
     <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
     <div class="answer-title">空間図形1 - 解答・解説</div>
     <div class="solution-body">
-      <div class="section-title">最短経路を平面で考える</div>
-      <p>面 \(ABC\) 以外の3面は、いずれも \(O\) を含む。\(O\) から \(P\) への経路が初めて面 \(ABC\) に達する点を \(Q\) とする。</p>
-      <p>\(Q\) は面 \(ABC\) の辺上にあり、\(O,Q\) をともに含む側面がある。したがって、\(Q\) までの経路は、その側面内の線分 \(OQ\) で置き換えても長くならない。また、\(Q\) から先は面 \(ABC\) 内の線分 \(QP\) で置き換えてよい。</p>
-      <p>よって、側面を1つ通ってから面 \(ABC\) に入る3通りの経路だけを考えれば十分である。</p>
-      <p>面 \(ABC\) を平面上に置き、3つの側面をそれぞれ外側に開く。このときの \(O\) の移った点を、辺 \(BC,CA,AB\) に対応させて \(O_1,O_2,O_3\) とする。</p>
-      <p>各線分 \(O_iP\) は対応する辺を横切り、展開した2面の中を通るので、実際の経路になる。したがって、</p>
-      <div class="numbered-equation"><span class="equation-math">\(\displaystyle l=\min\{O_1P,O_2P,O_3P\}\)</span><span class="equation-number" aria-label="式①">…①</span></div>
-
-      <div class="section-title">対称性を利用して範囲を絞る</div>
-      <p>この平面上に座標をとり、</p>
+      <p>経路が初めて面 \(ABC\) に達する点を \(Q\) とする。\(O,Q\) を含む側面内の線分 \(OQ\) と、面 \(ABC\) 内の線分 \(QP\) に置き換えても長くならない。したがって、側面を1つ通る3通りを考えればよい。</p>
+      <p>面 \(ABC\) を平面上に置き、</p>
       $$A=(0,\sqrt3),\quad B=(-1,0),\quad C=(1,0)$$
-      <p>とする。側面も1辺の長さが \(2\) の正三角形なので、</p>
+      <p>とする。辺 \(BC,CA,AB\) に沿って側面を外側に開いたとき、\(O\) が移る点はそれぞれ</p>
       $$O_1=(0,-\sqrt3),\quad O_2=(2,\sqrt3),\quad O_3=(-2,\sqrt3)$$
-      <p>である。\(P=(x,y)\) とおくと、\(y\ge0\) であり、</p>
-      $$O_1P^2=x^2+(y+\sqrt3)^2$$
-      $$O_2P^2=(x-2)^2+(y-\sqrt3)^2$$
-      $$O_3P^2=(x+2)^2+(y-\sqrt3)^2$$
-      <p>となる。図形の回転対称性より、3つの距離のうち \(O_1P\) が最小となる場合を考えれば十分である。同じ最小値をとる距離が複数ある場合も含める。</p>
-      <p>距離の2乗の差をとると、</p>
-      $$O_1P^2-O_2P^2=4(x+\sqrt3y-1)$$
-      $$O_1P^2-O_3P^2=4(-x+\sqrt3y-1)$$
-      <p>であるから、\(O_1P\le O_2P,\ O_1P\le O_3P\) より、</p>
-      $$|x|+\sqrt3y\le1$$
-      <p>を得る。\(y\ge0\) と合わせると、</p>
+      <p>である。各線分 \(O_iP\) は対応する辺を通るので、</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle l=\min\{O_1P,O_2P,O_3P\}\)</span><span class="equation-number" aria-label="式①">…①</span></div>
+      <p>回転対称性より、\(O_1P\) が最小となる場合を考える。\(P=(x,y)\) とおくと \(y\ge0\) であり、</p>
+      $$O_1P^2-O_2P^2=4(x+\sqrt3y-1)\le0$$
+      $$O_1P^2-O_3P^2=4(-x+\sqrt3y-1)\le0$$
+      <p>より、</p>
       <div class="numbered-equation"><span class="equation-math">\(\displaystyle 0\le y\le\frac1{\sqrt3},\qquad |x|\le1-\sqrt3y\)</span><span class="equation-number" aria-label="式②">…②</span></div>
-      <p>となる。この範囲は、\(G=(0,1/\sqrt3)\) を頂点とする三角形 \(BCG\) である。なお、\(G\) は三角形 \(ABC\) の重心である。</p>
-
-      <div class="section-title">最大値と等号成立条件</div>
-      <p>①、②より、</p>
+      <p>したがって、①、②から、</p>
       $$\begin{aligned}
-      l^2&=O_1P^2\\
-      &=x^2+(y+\sqrt3)^2\\
+      l^2&=x^2+(y+\sqrt3)^2\\
       &\le(1-\sqrt3y)^2+(y+\sqrt3)^2\\
-      &=4+4y^2\\
-      &\le4+4\left(\frac1{\sqrt3}\right)^2\\
-      &=\frac{16}{3}
+      &=4+4y^2\le\frac{16}{3}
       \end{aligned}$$
-      <p>等号が成立するのは \(y=1/\sqrt3\) のときであり、②より、このとき \(x=0\) である。すなわち \(P=G\) のときに限る。</p>
-      <p>実際に \(P=G\) とすると、3つの距離はすべて \(4/\sqrt3\) となる。\(G\) は回転によって動かないので、残りの対称な範囲にも別の等号成立点はない。</p>
+      <p>等号は \((x,y)=(0,1/\sqrt3)\)、すなわち \(P\) が面 \(ABC\) の重心のときに限り成立する。重心は回転によって動かないため、他の範囲にも別の等号成立点はない。</p>
       <div class="final-answer-box">
         <div class="final-answer-title">【答】</div>
-        <p>最大値は \(\displaystyle \frac{4\sqrt3}{3}\)</p>
-        <p>その最大値をとるのは、\(P\) が面 \(ABC\) の重心にあるとき。</p>
+        <p>最大値は \(\displaystyle \frac{4\sqrt3}{3}\)。\(P\) が面 \(ABC\) の重心にあるときにとる。</p>
       </div>
       <div class="section-title">【解答へのアプローチ】</div>
-      <p>表面上の最短経路は、面を開いて平面上の線分として考える。ただし、どの面を通るかによって長さが異なるため、3つの距離のうち最も短いものを比較する必要がある。</p>
-      <p>対称性から重心が候補と予想できるが、それだけでは最大性の証明にはならない。「どの距離が最小か」によって三角形を3つの範囲に分け、そのうち1つで上限を示すのがポイントである。</p>
-      <p>頂点 \(A,B,C\) では最短距離は \(2\) であるのに対し、重心では \(4\sqrt3/3\) となる。表面に沿って進む場合には、面の内部の点が最も遠くなる。</p>
+      <p>3つの展開図で得られる距離の最小値を考える。対称性を使って1つの距離が最小となる範囲に絞り、その範囲で上限と等号成立条件を調べる。</p>
     </div>
   </div>
 </div>
@@ -1110,6 +1087,7 @@
 
 </body>
 </html>
+
 
 
 
