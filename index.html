@@ -384,6 +384,10 @@
       <ul class="news-list">
         <li class="news-item">
           <span class="news-date">2026.10.11</span>
+          <span class="news-text">「整数1」を追加しました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026.10.11</span>
           <span class="news-text">「積分法1」を追加しました。</span>
         </li>
         <li class="news-item">
@@ -432,6 +436,10 @@
         <div class="card-title">積分法1</div>
         <div class="card-footer">問題を開く &rarr;</div>
       </div>
+      <div class="card" role="button" tabindex="0" onclick="showView('problem7-view')">
+        <div class="card-title">整数1</div>
+        <div class="card-footer">問題を開く &rarr;</div>
+      </div>
     </div>
 
     <!-- 解答・解説セクション -->
@@ -459,6 +467,10 @@
       </div>
       <div class="card" role="button" tabindex="0" onclick="showView('answer6-view')">
         <div class="card-title">積分法1</div>
+        <div class="card-footer">解答を開く &rarr;</div>
+      </div>
+      <div class="card" role="button" tabindex="0" onclick="showView('answer7-view')">
+        <div class="card-title">整数1</div>
         <div class="card-footer">解答を開く &rarr;</div>
       </div>
     </div>
@@ -1000,8 +1012,107 @@
   </div>
 </div>
 
+<!-- ==================== 問題 7 ==================== -->
+<div id="problem7-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="problem-title">整数1</div>
+    <div class="problem-body">
+      <p>\(a,b\) を、\(a&lt;b\) を満たす互いに素な正の整数とする。</p>
+      <div class="sub-question">
+        (1) $$\frac{a^2+b^2}{(b-a)^2}$$
+        が整数ならば、\(b=a+1\) であることを示せ。
+      </div>
+      <div class="sub-question">
+        (2) $$\frac{a^2+b^2}{(b-a)^2}$$
+        が平方数となり、かつ \(a+b&lt;2027\) を満たす組 \((a,b)\) をすべて求めよ。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 解答 7 ==================== -->
+<div id="answer7-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="answer-title">整数1 - 解答・解説</div>
+    <div class="solution-body">
+      <div class="section-title">(1) の解答</div>
+      <p>\(d=b-a\) とおく。\(a,b\) は互いに素なので、\(a,d\) も互いに素である。</p>
+      <p>仮定より、\(d^2\) は \(a^2+b^2\) を割り切る。特に \(d\) は \(a^2+b^2\) を割り切り、</p>
+      $$a^2+b^2=a^2+(a+d)^2=2a^2+2ad+d^2$$
+      <p>だから、\(d\) は \(2a^2\) を割り切る。</p>
+      <p>\(a,d\) は互いに素なので、\(d\) は \(2\) を割り切る。したがって、</p>
+      $$d=1,\ 2$$
+      <p>ところが \(d=2\) ならば、\(a,b\) はともに奇数であるため、</p>
+      $$a^2+b^2\equiv2\pmod4$$
+      <p>これは \(d^2=4\) が \(a^2+b^2\) を割り切ることに反する。</p>
+      <p>よって \(d=1\)、すなわち \(b=a+1\) である。</p>
+
+      <div class="section-title">(2) の解答</div>
+      <p>(1) より \(b=a+1\) だから、ある正の整数 \(m\) を用いて、</p>
+      $$a^2+(a+1)^2=m^2$$
+      <p>と表せる。ここで、</p>
+      $$s=2a+1=a+b$$
+      <p>とおくと、</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle s^2-2m^2=-1\)</span><span class="equation-number" aria-label="式①">…①</span></div>
+      <p>となる。求める範囲は \(3\leq s&lt;2027\) である。</p>
+      <p>①を満たす正の整数の組を、大きな解から小さな解へ移す方法で調べる。</p>
+      <p>①を満たす \(s\geq3\) に対して、</p>
+      $$S=3s-4m,\qquad M=3m-2s$$
+      <p>とおく。計算すると、</p>
+      $$\begin{aligned}
+      S^2-2M^2&=(3s-4m)^2-2(3m-2s)^2\\
+      &=s^2-2m^2\\
+      &=-1
+      \end{aligned}$$
+      <p>である。また、①より、</p>
+      $$m^2=\frac{s^2+1}{2}$$
+      <p>したがって、</p>
+      $$9s^2-16m^2=s^2-8&gt;0$$
+      <p>だから \(3s&gt;4m\)、すなわち \(S&gt;0\) である。同様に、</p>
+      $$9m^2-4s^2=\frac{s^2+9}{2}&gt;0$$
+      <p>より \(M&gt;0\) である。さらに、</p>
+      $$4m^2-s^2=s^2+2&gt;0$$
+      <p>より \(2m&gt;s\) なので、</p>
+      $$S=3s-4m&lt;s$$
+      <p>よって、①を満たす \(s\geq3\) の解から、同じ式を満たす、より小さい正の整数の解が得られる。</p>
+      <p>①から \(s\) は奇数である。上の操作を繰り返すと、\(s\) は正の整数の範囲で減少するため、最後には \(s=1\) となる。①より、このとき \(m=1\) である。</p>
+      <p>逆に、\(S=3s-4m,\ M=3m-2s\) を \(s,m\) について解くと、</p>
+      $$s=3S+4M,\qquad m=2S+3M$$
+      <p>したがって、すべての正の整数解は、\((1,1)\) から</p>
+      $$(s,m)\longmapsto(3s+4m,\ 2s+3m)$$
+      <p>を繰り返して得られる。この操作で得られる組も正の整数であり、</p>
+      $$(3s+4m)^2-2(2s+3m)^2=s^2-2m^2=-1$$
+      <p>なので、確かに①の解になる。</p>
+      <p>順に計算すると、</p>
+      $$\begin{array}{c|r|c}
+      s&m&(a,b)\\ \hline
+      1&1&(0,1)\\
+      7&5&(3,4)\\
+      41&29&(20,21)\\
+      239&169&(119,120)\\
+      1393&985&(696,697)\\
+      8119&5741&(4059,4060)
+      \end{array}$$
+      <p>\(s=1\) のときは \(a=0\) となるので条件に合わない。また、\(s=8119\) は \(s&lt;2027\) を満たさない。この生成操作では \(s\) は増加するため、これ以降の解も条件を満たさない。</p>
+      <p>残る4組は、いずれも連続する正の整数なので互いに素であり、すべての条件を満たす。</p>
+      <div class="final-answer-box">
+        <div class="final-answer-title">【答】</div>
+        <p>(1) 証明略</p>
+        <p>(2) \((a,b)=(3,4),\ (20,21),\ (119,120),\ (696,697)\)</p>
+      </div>
+      <div class="section-title">【解答へのアプローチ】</div>
+      <p>(1) では、分母に現れる差 \(b-a\) と \(a\) が互いに素であることが鍵になる。まず \(b-a\) が \(2\) を割り切ることを示し、残った候補を \(4\) で割った余りによって絞り込む。</p>
+      <p>(2) では、平方完成により \(s^2-2m^2=-1\) という形に整理する。いくつかの解を発見するだけでは「すべて求めた」ことにはならないため、解を小さくする操作を考え、すべての解が \((1,1)\) に帰着することを示す。</p>
+      <p>変換の係数は、\(3^2-2\cdot2^2=1\) に着目すると見つけやすい。\((s+m\sqrt2)(3-2\sqrt2)=(3s-4m)+(3m-2s)\sqrt2\) と展開すると、解答で用いた変換が現れる。最後に逆の操作で解を順に生成すれば、漏れなく列挙できる。</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
+
 
 
 
