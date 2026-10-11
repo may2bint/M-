@@ -384,10 +384,6 @@
       <ul class="news-list">
         <li class="news-item">
           <span class="news-date">2026.10.11</span>
-          <span class="news-text">「空間図形1」の問題に不備があったため、問題を改題しました。申し訳ありません。</span>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026.10.11</span>
           <span class="news-text">「整数1」を追加しました。</span>
         </li>
         <li class="news-item">
@@ -401,10 +397,6 @@
         <li class="news-item">
           <span class="news-date">2026.09.17</span>
           <span class="news-text">「数列の極限2」を改題しました。</span>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026.09.14</span>
-          <span class="news-text">「空間図形1」を追加しました。</span>
         </li>
         <li class="news-item">
           <span class="news-date">2026.09.11</span>
@@ -426,10 +418,6 @@
       </div>
       <div class="card" role="button" tabindex="0" onclick="showView('problem3-view')">
         <div class="card-title">数列の極限2</div>
-        <div class="card-footer">問題を開く &rarr;</div>
-      </div>
-      <div class="card" role="button" tabindex="0" onclick="showView('problem4-view')">
-        <div class="card-title">空間図形1</div>
         <div class="card-footer">問題を開く &rarr;</div>
       </div>
             <div class="card" role="button" tabindex="0" onclick="showView('problem5-view')">
@@ -459,10 +447,6 @@
       </div>
       <div class="card" role="button" tabindex="0" onclick="showView('answer3-view')">
         <div class="card-title">数列の極限2</div>
-        <div class="card-footer">解答を開く &rarr;</div>
-      </div>
-      <div class="card" role="button" tabindex="0" onclick="showView('answer4-view')">
-        <div class="card-title">空間図形1</div>
         <div class="card-footer">解答を開く &rarr;</div>
       </div>
       <div class="card" role="button" tabindex="0" onclick="showView('answer5-view')">
@@ -568,20 +552,6 @@
     </div>
   </div>
 </div>
-
-<!-- ==================== 問題 4 ==================== -->
-<div id="problem4-view" class="view problem-view-wrapper" style="display: none;">
-  <div class="page">
-    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
-    <div class="problem-title">空間図形1</div>
-    <div class="problem-body">
-      <p>1辺の長さが \(2\) の正四面体 \(OABC\) がある。面 \(ABC\) 上（辺および頂点を含む）に点 \(P\) をとる。</p>
-      <p>正四面体の表面に沿って頂点 \(O\) から点 \(P\) まで進むときの最短距離を \(l\) とする。</p>
-      <p>点 \(P\) が面 \(ABC\) 上を動くとき、\(l\) の最大値と、その最大値をとる点 \(P\) の位置を求めよ。</p>
-    </div>
-  </div>
-</div>
-
 
 <!-- ==================== 問題 5 ==================== -->
 <div id="problem5-view" class="view problem-view-wrapper" style="display: none;">
@@ -755,42 +725,6 @@
     </div>
   </div>
 </div>
-
-<!-- ==================== 解答 4 ==================== -->
-<div id="answer4-view" class="view problem-view-wrapper" style="display: none;">
-  <div class="page">
-    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
-    <div class="answer-title">空間図形1 - 解答・解説</div>
-    <div class="solution-body">
-      <p>経路が初めて面 \(ABC\) に達する点を \(Q\) とする。\(O,Q\) を含む側面内の線分 \(OQ\) と、面 \(ABC\) 内の線分 \(QP\) に置き換えても長くならない。したがって、側面を1つ通る3通りを考えればよい。</p>
-      <p>面 \(ABC\) を平面上に置き、</p>
-      $$A=(0,\sqrt3),\quad B=(-1,0),\quad C=(1,0)$$
-      <p>とする。辺 \(BC,CA,AB\) に沿って側面を外側に開いたとき、\(O\) が移る点はそれぞれ</p>
-      $$O_1=(0,-\sqrt3),\quad O_2=(2,\sqrt3),\quad O_3=(-2,\sqrt3)$$
-      <p>である。各線分 \(O_iP\) は対応する辺を通るので、</p>
-      <div class="numbered-equation"><span class="equation-math">\(\displaystyle l=\min\{O_1P,O_2P,O_3P\}\)</span><span class="equation-number" aria-label="式①">…①</span></div>
-      <p>回転対称性より、\(O_1P\) が最小となる場合を考える。\(P=(x,y)\) とおくと \(y\ge0\) であり、</p>
-      $$O_1P^2-O_2P^2=4(x+\sqrt3y-1)\le0$$
-      $$O_1P^2-O_3P^2=4(-x+\sqrt3y-1)\le0$$
-      <p>より、</p>
-      <div class="numbered-equation"><span class="equation-math">\(\displaystyle 0\le y\le\frac1{\sqrt3},\qquad |x|\le1-\sqrt3y\)</span><span class="equation-number" aria-label="式②">…②</span></div>
-      <p>したがって、①、②から、</p>
-      $$\begin{aligned}
-      l^2&=x^2+(y+\sqrt3)^2\\
-      &\le(1-\sqrt3y)^2+(y+\sqrt3)^2\\
-      &=4+4y^2\le\frac{16}{3}
-      \end{aligned}$$
-      <p>等号は \((x,y)=(0,1/\sqrt3)\)、すなわち \(P\) が面 \(ABC\) の重心のときに限り成立する。重心は回転によって動かないため、他の範囲にも別の等号成立点はない。</p>
-      <div class="final-answer-box">
-        <div class="final-answer-title">【答】</div>
-        <p>最大値は \(\displaystyle \frac{4\sqrt3}{3}\)。\(P\) が面 \(ABC\) の重心にあるときにとる。</p>
-      </div>
-      <div class="section-title">【解答へのアプローチ】</div>
-      <p>3つの展開図で得られる距離の最小値を考える。対称性を使って1つの距離が最小となる範囲に絞り、その範囲で上限と等号成立条件を調べる。</p>
-    </div>
-  </div>
-</div>
-
 
 <!-- ==================== 解答 5 ==================== -->
 <div id="answer5-view" class="view problem-view-wrapper" style="display: none;">
@@ -1087,6 +1021,7 @@
 
 </body>
 </html>
+
 
 
 
