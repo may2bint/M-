@@ -384,6 +384,10 @@
       <ul class="news-list">
         <li class="news-item">
           <span class="news-date">2026.10.11</span>
+          <span class="news-text">「空間図形1」「数列の極限1」の解答を修正しました。「場合の数と確率1」の問題文と「数列の極限2」の数式表記を整えました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026.10.11</span>
           <span class="news-text">「整数1」を追加しました。</span>
         </li>
         <li class="news-item">
@@ -491,6 +495,7 @@
       <p>
         \(1, 2, 3, \dots, n\) の数字が 1 つずつ書かれた \(n\) 枚のカードがある（ただし \(n \ge 2\) とする）。
         この \(n\) 枚のカードを 1 枚ずつ元に戻さずにすべて取り出し、取り出した順に \(a_1, a_2, a_3, \dots, a_n\) とする。
+        各回、残っているどのカードも等しい確率で取り出されるものとする。
       </p>
       <p>得点を次のように定める。</p>
       <ul class="rule-list">
@@ -677,12 +682,12 @@
       </p>
       <p>
         \(a_{n+1} \ge \frac{1}{\sqrt{2}} > 0\) より \(2(a_{n+1} + 1) > 2\) であるから、
-        $$|a_{n+1} - 1| < \frac{1}{2} |a_n - 1| \quad (n \ge 2)$$
+        $$|a_{n+1} - 1| \le \frac{1}{2} |a_n - 1| \quad (n \ge 2)$$
         が得られる。
       </p>
       <p>
         これを繰り返し適用すると、
-        $$0 \le |a_n - 1| < \left(\frac{1}{2}\right)^{n-2} |a_2 - 1| \quad (n \ge 2)$$
+        $$0 \le |a_n - 1| \le \left(\frac{1}{2}\right)^{n-2} |a_2 - 1| \quad (n \ge 2)$$
         となる。
       </p>
       <p>
@@ -709,7 +714,7 @@
     <div class="solution-body">
       <div class="section-title">(1) の解答</div>
       <p>
-        \(0 < x < \frac{\pi}{2}\) において \(0 < \sin x < 1\) より、各辺に \(sin^{2n-1} x \) と \(sin^{2n} x \) をそれぞれ掛けると、
+        \(0 < x < \frac{\pi}{2}\) において \(0 < \sin x < 1\) より、各辺に \(\sin^{2n-1} x \) と \(\sin^{2n} x \) をそれぞれ掛けると、
         $$0 < \sin^{2n+1} x < \sin^{2n} x < \sin^{2n-1} x$$
         \(0\) から \(\frac{\pi}{2}\) まで定積分すると、
         $$\int_0^{\frac{\pi}{2}} \sin^{2n+1} x \, dx < \int_0^{\frac{\pi}{2}} \sin^{2n} x \, dx < \int_0^{\frac{\pi}{2}} \sin^{2n-1} x \, dx$$
@@ -762,64 +767,103 @@
   <div class="page">
     <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
     <div class="answer-title">空間図形1 - 解答・解説</div>
-
     <div class="solution-body">
-      <div class="section-title">解答</div>
-      <p>
-        上面 \(\text{DEFG}\) 上の点 \(\text{P}\) の座標を \((x, y, a)\) （ただし \(0 \le x \le 1,\ 0 \le y \le 1\)）とする。<br>
-        原点 \(\text{O}(0, 0, 0)\) から点 \(\text{P}\) までの経路として、主要な \(4\) つの展開図上の距離を考える。
-      </p>
-      <p>
-        ① 前面 \(\text{OAED}\) を経由して上面に至る経路（辺 \(\text{DE}\) をまたぐ）：
-        $$l_1 = \sqrt{x^2 + (a+y)^2}$$
-        ② 左側面 \(\text{OCGD}\) を経由して上面に至る経路（辺 \(\text{DG}\) をまたぐ）：
-        $$l_2 = \sqrt{(a+x)^2 + y^2}$$
-        ③ 前面 \(\text{OAED}\) から右側面 \(\text{ABFE}\) を経由して上面に至る経路（辺 \(\text{AE}, \text{EF}\) をまたぐ）：
-        $$l_3 = \sqrt{(1+y)^2 + (a+1-x)^2}$$
-        ④ 左側面 \(\text{OCGD}\) から背面 \(\text{BCGF}\) を経由して上面に至る経路（辺 \(\text{CG}, \text{FG}\) をまたぐ）：
-        $$l_4 = \sqrt{(1+x)^2 + (a+1-y)^2}$$
-      </p>
-      <p>
-        したがって、最短経路の長さ \(l\) は \(l = \min(l_1, l_2, l_3, l_4)\) となる。
-      </p>
-      <p>
-        ここで \(x\) と \(y\) に関する対称性より、\(y \ge x\) の領域を考えれば十分である。<br>
-        \(y \ge x\) のとき、
-        $$l_1^2 - l_2^2 = \{x^2 + (a+y)^2\} - \{(a+x)^2 + y^2\} = 2a(y-x) \ge 0 \implies l_1 \ge l_2$$
-        $$l_3^2 - l_4^2 = \{(1+y)^2 + (a+1-x)^2\} - \{(1+x)^2 + (a+1-y)^2\} = 2(a+2)(y-x) \ge 0 \implies l_3 \ge l_4$$
-        となるため、\(y \ge x\) における最短距離は \(l = \min(l_2, l_4)\) となる。
-      </p>
-      <p>
-        さらに、\(0 \le y \le 1\) において、\(l_2^2 = (a+x)^2 + y^2\) は \(y\) に関して単調増加であり、\(l_4^2 = (1+x)^2 + (a+1-y)^2\) は \(y\) に関して単調減少である。<br>
-        したがって、\(x\) を固定したとき、\(\min(l_2^2, l_4^2)\) が最大となるのは \(l_2^2 = l_4^2\) のときである。
-      </p>
-      <p>
-        このとき、
-        $$(a+x)^2 + y^2 = (1+x)^2 + (a+1-y)^2 \therefore (a-1)x + (a+1)y = a+1$$
-        $$\therefore y = 1 - \frac{a-1}{a+1}x$$
-        これを \(l_2^2\) に代入した関数を \(h(x)\) とおくと、
-        $$h(x) = (a+x)^2 + \left(1 - \frac{a-1}{a+1}x\right)^2$$
-        微分すると \(h'(x) = 2(a+x) - 2\frac{a-1}{a+1}\left(1 - \frac{a-1}{a+1}x\right)\) であり、\(a > 1\) および \(x \ge 0\) のとき \(h'(x) > 0\) となるため、\(h(x)\) は単調増加である。
-      </p>
-      <p>
-        よって、\(y \ge x\) の条件を満たす範囲で \(x\) を最大にする、すなわち \(y = x\) となるときに \(l\) は最大となる。<br>
-        \((a-1)x + (a+1)x = a+1\) より、\(x = \frac{a+1}{2a}\) を得る。このとき \(y = \frac{a+1}{2a}\) である。
-      </p>
-      <p>
-        \(x = y = \frac{a+1}{2a}\) を \(l_2^2\) に代入すると、
-        $$l^2 = \left(a + \frac{a+1}{2a}\right)^2 + \left(\frac{a+1}{2a}\right)^2 = \left(\frac{2a^2+a+1}{2a}\right)^2 + \left(\frac{a+1}{2a}\right)^2$$
-        $$l^2 = \frac{4a^4 + 4a^3 + 6a^2 + 4a + 2}{4a^2} = \frac{(a^2+1)(2a^2+2a+1)}{2a^2}$$
-        したがって、\(l = \frac{\sqrt{2(a^2+1)(2a^2+2a+1)}}{2a}\) となる。
-      </p>
+      <div class="section-title">最短経路の候補</div>
+      <p>\(P=(x,y,a)\)（\(0\le x\le1,\ 0\le y\le1\)）とする。以下、面 \(OAED,OCGD,ABFE,BCGF\) を、それぞれ前面、左側面、右側面、背面と呼ぶ。</p>
+      <p>まず、次の4つの展開図で、\(O\) と \(P\) を結ぶ線分の長さを考える。</p>
+      <p>前面から上面に至る場合：</p>
+      $$l_1=\sqrt{x^2+(a+y)^2}$$
+      <p>左側面から上面に至る場合：</p>
+      $$l_2=\sqrt{(a+x)^2+y^2}$$
+      <p>前面、右側面、上面の順に進む場合：</p>
+      $$l_3=\sqrt{(1+y)^2+(a+1-x)^2}$$
+      <p>左側面、背面、上面の順に進む場合：</p>
+      $$l_4=\sqrt{(1+x)^2+(a+1-y)^2}$$
+      <p>これらを用いると、最短距離は</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle l=\min(l_1,l_2,l_3,l_4)\)</span><span class="equation-number" aria-label="式①">…①</span></div>
+      <p>と表せる。経路の網羅と、展開図上の線分が実際の経路になる条件を、次に確認する。</p>
+
+      <div class="section-title">①が成り立つ理由</div>
+      <p>同じ面上の2点を結ぶ経路は、その面内の線分で置き換えても長くならない。したがって、最短経路では同じ面に戻る必要はなく、上面に達した後は上面内の線分で \(P\) に向かえばよい。</p>
+      <p>また、底面・前面・左側面はいずれも \(O\) を含む。途中でこれらの面に入る場合は、そこまでの経路を \(O\) からその面内の線分に置き換えられる。よって、この3面のうち最初に進む面を1つ選び、その後は右側面・背面・上面のみを通る経路を調べれば十分である。辺に沿う経路も、隣接する面のいずれかに含めて考える。</p>
+      <p>先の4経路以外に残るのは、次の6経路である。表中の \(L\) は、各経路の面を展開したときの \(O,P\) 間の直線距離である。実際の経路の長さは \(L\) 以上である。</p>
+      <table style="width:100%; border-collapse:collapse; margin:12px 0; font-size:9pt;">
+        <thead><tr><th style="border-bottom:1px solid #999; padding:6px; text-align:left;">通る面の順序</th><th style="border-bottom:1px solid #999; padding:6px;">\(L^2\)</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:6px;">前 → 右 → 後 → 上</td><td style="padding:6px;">\((3-x)^2+(a+1-y)^2\)</td></tr>
+          <tr><td style="padding:6px;">左 → 後 → 右 → 上</td><td style="padding:6px;">\((3-y)^2+(a+1-x)^2\)</td></tr>
+          <tr><td style="padding:6px;">底 → 右 → 上</td><td style="padding:6px;">\(y^2+(a+2-x)^2\)</td></tr>
+          <tr><td style="padding:6px;">底 → 後 → 上</td><td style="padding:6px;">\(x^2+(a+2-y)^2\)</td></tr>
+          <tr><td style="padding:6px;">底 → 右 → 後 → 上</td><td style="padding:6px;">\((2-x)^2+(a+2-y)^2\)</td></tr>
+          <tr><td style="padding:6px;">底 → 後 → 右 → 上</td><td style="padding:6px;">\((2-y)^2+(a+2-x)^2\)</td></tr>
+        </tbody>
+      </table>
+      <p>第1行は \(3-x\ge1+x\) より \(L\ge l_4\)、第2行は同様に \(L\ge l_3\) となる。</p>
+      <p>第3行については、</p>
+      $$L^2-l_3^2=2(a+1-x-y)>0$$
+      <p>である。ここで \(a&gt;1,\ x+y\le2\) を用いた。第4行も同様に \(L^2-l_4^2>0\) である。</p>
+      <p>第5行については、</p>
+      $$L^2-l_1^2=4(1-x)+4(a+1)(1-y)\ge0$$
+      <p>である。第6行も同様に \(L^2-l_2^2\ge0\) である。以上より、どの経路の長さも \(\min(l_1,l_2,l_3,l_4)\) 以上となる。</p>
+      <p>一方、\(l_1,l_2\) の線分は常に実際の経路になる。\(l_3\) の線分が前面と右側面の境界を高さ \(a\) 以下で横切る条件は、</p>
+      $$\frac{a+1-x}{1+y}\le a\quad\Longleftrightarrow\quad1-x\le ay$$
+      <p>である。この条件が成り立つときは \(l_3\) も実際の経路になる。成り立たないときは、</p>
+      $$l_3^2-l_1^2=2\{(a+1)(1-x)-(a-1)y\}>0$$
+      <p>なので、\(l_3\) は4つの最小値にならない。同様に、\(l_4\) が実際の経路になる条件は \(1-y\le ax\) であり、成り立たないときは \(l_4>l_2\) となる。</p>
+      <p>したがって、4つの最小値は実際の経路で達成される。これで①が示された。</p>
+
+      <div class="section-title">最短距離の最大化</div>
+      <p>対称性より、\(0\le x\le y\le1\) の範囲を考えればよい。このとき、</p>
+      $$l_1^2-l_2^2=2a(y-x)\ge0$$
+      $$l_3^2-l_4^2=2(a+2)(y-x)\ge0$$
+      <p>であるから、①より</p>
+      $$l^2=\min\{(a+x)^2+y^2,\ (1+x)^2+(a+1-y)^2\}$$
+      <p>となる。\(x\) を固定すると、前者は \(y\) に関して増加し、後者は減少する。両者が等しくなるのは、</p>
+      $$y=1-\frac{a-1}{a+1}x$$
+      <p>のときである。ここで、</p>
+      $$t=\frac{a+1}{2a}\qquad\left(\frac12<t<1\right)$$
+      <p>とおく。この交点が許容範囲 \(x\le y\le1\) に入るのは、\(0\le x\le t\) の場合に限られる。</p>
+
+      <p style="margin-top:12px;"><strong>① \(0\le x\le t\) の場合</strong></p>
+      <p>固定した \(x\) に対し、両者が等しくなるところで \(l^2\) が最大となり、その値は</p>
+      $$h(x)=(a+x)^2+\left(1-\frac{a-1}{a+1}x\right)^2$$
+      <p>である。\(r=(a-1)/(a+1)\) とおけば \(0<r<1\) であり、</p>
+      $$h'(x)=2\{a-r+(1+r^2)x\}>0$$
+      <p>となる。よって、この範囲での最大値は \(x=y=t\) のときにとる。</p>
+
+      <p style="margin-top:12px;"><strong>② \(t\le x\le1\) の場合</strong></p>
+      <p>\(y\ge x\) より、</p>
+      $$l_2^2-l_4^2=2\{(a-1)x+(a+1)y-(a+1)\}\ge0$$
+      <p>となるので、\(l^2=l_4^2\) である。これは \(y\) に関して減少するから、固定した \(x\) に対して \(y=x\) のとき最大となる。その値を</p>
+      $$k(x)=(1+x)^2+(a+1-x)^2$$
+      <p>とおく。\(k(x)\) は \(x^2\) の係数が正の2次関数なので、区間 \([t,1]\) での最大値は端点 \(x=t,1\) のいずれかでとる。区間内部では端点の最大値より小さい。</p>
+
+      <p style="margin-top:12px;">以上より、最大となる点の候補は \((t,t,a)\) と \((1,1,a)\) の2点である。これらはともに \(x=y\) 上にあるため、対称な領域にも別の候補は生じない。</p>
+      <p>それぞれの距離の2乗は、</p>
+      $$h(t)=k(t)=\frac{(a^2+1)(2a^2+2a+1)}{2a^2},\qquad k(1)=a^2+4$$
+      <p>であり、差をとると、</p>
+      $$h(t)-k(1)=\frac{(a-1)(2a^2-3a-1)}{2a^2}$$
+      <p>となる。そこで、</p>
+      $$c=\frac{3+\sqrt{17}}4$$
+      <p>とおくと、\(1<a<c\) では \(h(t)<k(1)\)、\(a=c\) では等しく、\(a>c\) では \(h(t)>k(1)\) となる。</p>
 
       <div class="final-answer-box">
         <div class="final-answer-title">【答】</div>
-        点 \(\text{P}\) の座標：\(\displaystyle \left(\frac{a+1}{2a},\ \frac{a+1}{2a},\ a\right)\)<br>
-        \(l\) の値：\(\displaystyle \frac{\sqrt{2(a^2+1)(2a^2+2a+1)}}{2a}\) &nbsp;&nbsp;（または \(\displaystyle \frac{\sqrt{4a^4+4a^3+6a^2+4a+2}}{2a}\)）
+        <p>\(\displaystyle c=\frac{3+\sqrt{17}}4,\quad t=\frac{a+1}{2a}\) とおく。</p>
+        <p style="margin-top:10px;">\(1<a<c\) のとき：</p>
+        $$P=(1,1,a),\qquad l_{\max}=\sqrt{a^2+4}$$
+        <p>\(a=c\) のとき：</p>
+        $$P=(1,1,a)\ \text{または}\ (t,t,a),\qquad l_{\max}=\sqrt{a^2+4}$$
+        <p>\(a>c\) のとき：</p>
+        $$P=(t,t,a),\qquad l_{\max}=\frac{\sqrt{2(a^2+1)(2a^2+2a+1)}}{2a}$$
       </div>
+      <div class="section-title">【解答へのアプローチ】</div>
+      <p>まず、展開図上の直線距離を比較して、点 \(P\) ごとの最短距離を求める。複数の面を通る経路や底面を通る経路も検討し、候補を省略できる理由を確認する。</p>
+      <p>次に、対称性を使って \(y\ge x\) に絞ると、増加する関数と減少する関数の小さい方を最大化する問題になる。ただし、両者の交点が許容範囲に入らない場合には、境界 \(y=x\) も調べなければならない。最後に2つの候補の値を比較すると、\(a\) による場合分けが現れる。</p>
     </div>
   </div>
 </div>
+
 
 <!-- ==================== 解答 5 ==================== -->
 <div id="answer5-view" class="view problem-view-wrapper" style="display: none;">
@@ -1116,6 +1160,7 @@
 
 </body>
 </html>
+
 
 
 
