@@ -323,6 +323,9 @@
     border-bottom: 1px solid #ccc;
     padding-bottom: 3px;
   }
+
+/* 式番号は数式処理を通さず、通常の文字として表示する */
+.equation-number {text-align:right; margin:0 0 12px; font-family:serif; font-size:10pt;}
 </style>
 <script>
   function showView(viewId) {
@@ -379,7 +382,7 @@
       <ul class="news-list">
         <li class="news-item">
           <span class="news-date">2026.10.11</span>
-          <span class="news-text">「積分法1」の問題・解答解説を追加しました。</span>
+          <span class="news-text">「積分法1」を追加しました。</span>
         </li>
         <li class="news-item">
           <span class="news-date">2026.10.05</span>
@@ -903,7 +906,8 @@
       <div class="section-title">(1) の解答</div>
       <p>積分区間を \(x=\dfrac{\pi}{4}\) で分け、後半で \(x=\dfrac{\pi}{2}-\theta\) と置換する。前半の積分変数も \(\theta\) と書けば、</p>
       $$g(a)=\int_0^{\pi/4}\frac{d\theta}{\cos^2\theta+a^2\sin^2\theta}
-      +\int_0^{\pi/4}\frac{d\theta}{\sin^2\theta+a^2\cos^2\theta}.\tag*{\text{①}}$$
+      +\int_0^{\pi/4}\frac{d\theta}{\sin^2\theta+a^2\cos^2\theta}.$$
+      <p class="equation-number" aria-label="式①">①</p>
       <p>ここで、\(\tan\alpha=a,\ 0&lt;\alpha&lt;\dfrac{\pi}{2}\) となる角 \(\alpha\) をとる。</p>
       <p>①の第1項で \(a\tan\theta=\tan u\) と置換すると、</p>
       $$\frac{a}{\cos^2\theta}\,d\theta=\frac{1}{\cos^2u}\,du.$$
@@ -927,9 +931,11 @@
 
       <div class="section-title">(2) の解答</div>
       <p>\(\sin^2x+\cos^2x=1\) と (1) の結果より、</p>
-      $$A+B=g(a)=\frac{\pi}{2a}.\tag*{\text{②}}$$
+      $$A+B=g(a)=\frac{\pi}{2a}.$$
+      <p class="equation-number" aria-label="式②">②</p>
       <p>また、</p>
-      $$A+a^2B=\int_0^{\pi/2}\frac{\cos^2x+a^2\sin^2x}{\cos^2x+a^2\sin^2x}\,dx=\frac{\pi}{2}.\tag*{\text{③}}$$
+      $$A+a^2B=\int_0^{\pi/2}\frac{\cos^2x+a^2\sin^2x}{\cos^2x+a^2\sin^2x}\,dx=\frac{\pi}{2}.$$
+      <p class="equation-number" aria-label="式③">③</p>
       <p>\(a\ne1\) のとき、③から②を引いて、</p>
       $$(a^2-1)B=\frac{\pi}{2}-\frac{\pi}{2a}=\frac{\pi(a-1)}{2a}.$$
       <p>したがって、</p>
@@ -952,7 +958,8 @@
       <p>積分変数を \(x\) と書き直し、</p>
       $$J=\int_0^{\pi/2}\frac{\sin^2x\cos^2x}{\cos^2x+a^2\sin^2x}\,dx$$
       <p>とおけば、</p>
-      $$f(a)=\frac a2J.\tag*{\text{④}}$$
+      $$f(a)=\frac a2J.$$
+      <p class="equation-number" aria-label="式④">④</p>
       <p>ここで、</p>
       $$\cos^2x-\frac{\cos^2x}{\cos^2x+a^2\sin^2x}
       =\frac{(a^2-1)\sin^2x\cos^2x}{\cos^2x+a^2\sin^2x}$$
@@ -988,7 +995,7 @@
         <p>(3) \(\displaystyle f(a)=\frac{\pi a}{8(a+1)^2}\)、最大値 \(\displaystyle \frac{\pi}{32}\)</p>
       </div>
       <div class="section-title">【解答へのアプローチ】</div>
-      <p>(1) では積分区間を半分に分け、後半で正弦と余弦を入れ替える。2つの置換で現れる角が互いに余角となり、その和が \(\pi/2\) になることが計算の鍵である。</p>
+      <p>(1) で積分区間全体にわたって \(a\tan x=\tan u\) と置換しようとすると、端点 \(x=\pi/2\) で \(\tan(\pi/2)\) が定義されない。そのため、端点の極限を扱わずに置換積分を行えるよう、区間を \(x=\pi/4\) で分け、後半で \(x=\pi/2-\theta\) と置換して正弦と余弦を入れ替える。これにより、どちらの積分も \(0\leq\theta\leq\pi/4\) の範囲で置換できる。2つの置換で現れる角が互いに余角となり、その和が \(\pi/2\) になることが計算の鍵である。</p>
       <p>(2) では個別に積分するよりも、\(A+B\) と \(A+a^2B\) を考えると分子がまとまる。</p>
       <p>(3) では分母を展開せず、\(\dfrac{2x}{1+x^2}\) と \(\dfrac{1-x^2}{1+x^2}\) に注目する。\(x=\tan\dfrac{\theta}{2}\) と置けば、それぞれ \(\sin\theta\)、\(\cos\theta\) となり、(2) の結果を利用できる形になる。</p>
     </div>
@@ -997,6 +1004,7 @@
 
 </body>
 </html>
+
 
 
 
