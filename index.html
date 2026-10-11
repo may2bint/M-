@@ -384,6 +384,10 @@
       <ul class="news-list">
         <li class="news-item">
           <span class="news-date">2026.10.11</span>
+          <span class="news-text">「空間図形1」を改題しました。数式の表示不具合を修正しました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026.10.11</span>
           <span class="news-text">「空間図形1」「数列の極限1」の解答を修正しました。「場合の数と確率1」の問題文と「数列の極限2」の数式表記を整えました。</span>
         </li>
         <li class="news-item">
@@ -499,8 +503,8 @@
       </p>
       <p>得点を次のように定める。</p>
       <ul class="rule-list">
-        <li>\(a_1 < a_2 < a_3 < \dots < a_n\) が成り立つとき、得点を \(n\) 点とする。</li>
-        <li>上記以外の場合、\(a_m > a_{m+1}\) となる最小の自然数 \(m\) を得点とする。</li>
+        <li>\(a_1 &lt; a_2 &lt; a_3 &lt; \dots &lt; a_n\) が成り立つとき、得点を \(n\) 点とする。</li>
+        <li>上記以外の場合、\(a_m &gt; a_{m+1}\) となる最小の自然数 \(m\) を得点とする。</li>
       </ul>
       <p>このとき、以下の問いに答えよ。</p>
 
@@ -554,7 +558,7 @@
       </p>
 
       <div class="sub-question">
-        (1) \(n \ge 1\) で \(\displaystyle I_{2n+1} < I_{2n} < I_{2n-1}\) を示せ。
+        (1) \(n \ge 1\) で \(\displaystyle I_{2n+1} &lt; I_{2n} &lt; I_{2n-1}\) を示せ。
       </div>
       <div class="sub-question">
         (2) \(\displaystyle I_{n+2} = \frac{n+1}{n+2} I_n\) を示せ。
@@ -574,20 +578,14 @@
   <div class="page">
     <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
     <div class="problem-title">空間図形1</div>
-    
     <div class="problem-body">
-      <p>
-        \(a > 1\) とする。\(3\) 次元空間内に、点 \(\text{O}(0, 0, 0)\) を原点とし、底面が \(xy\) 平面上の正方形 \(\text{OABC}\) （ただし \(\text{A}(1, 0, 0)\), \(\text{B}(1, 1, 0)\), \(\text{C}(0, 1, 0)\)）であり、高さが \(a\) である直方体 \(\text{OABC-DEFG}\) がある。ただし、点 \(\text{D}, \text{E}, \text{F}, \text{G}\) の \(z\) 座標はすべて正とする。
-      </p>
-      <p>
-        上面の正方形 \(\text{DEFG}\) 上に点 \(\text{P}\) をとり、原点 \(\text{O}\) から点 \(\text{P}\) まで直方体の表面に沿ってリボンを長さが最も短くなるように巻きつける。このときのリボンの長さを \(l\) とする。
-      </p>
-      <p>
-        上面 \(\text{DEFG}\) 上において、\(l\) が最大となる点 \(\text{P}\) の座標を求め、またそのときの \(l\) の値を \(a\) を用いて表せ。
-      </p>
+      <p>1辺の長さが \(2\) の正四面体 \(OABC\) がある。面 \(ABC\) 上（辺および頂点を含む）に点 \(P\) をとる。</p>
+      <p>正四面体の表面に沿って頂点 \(O\) から点 \(P\) まで進むときの最短距離を \(l\) とする。</p>
+      <p>点 \(P\) が面 \(ABC\) 上を動くとき、\(l\) の最大値と、その最大値をとる点 \(P\) の位置を求めよ。</p>
     </div>
   </div>
 </div>
+
 
 <!-- ==================== 問題 5 ==================== -->
 <div id="problem5-view" class="view problem-view-wrapper" style="display: none;">
@@ -614,19 +612,19 @@
     <div class="solution-body">
       <div class="section-title">(1) の解答</div>
       <p>
-        得点が \(n\) 点となるのは、取り出したカードが \(a_1 < a_2 < \dots < a_n\) と並ぶ場合に限られる。<br>
+        得点が \(n\) 点となるのは、取り出したカードが \(a_1 &lt; a_2 &lt; \dots &lt; a_n\) と並ぶ場合に限られる。<br>
         \(n\) 枚のカードの並べ方の総数は \(n!\) 通りあり、そのうち完全な昇順になる並べ方は \((1, 2, \dots, n)\) の 1 通りである。<br>
         したがって、求める確率は \(\displaystyle \frac{1}{n!}\) である。
       </p>
 
       <div class="section-title">(2) の解答</div>
       <p>
-        得点が \(k\) 点（\(1 \le k \le n-1\)）となる条件は、\(a_1 < a_2 < \dots < a_k\) かつ \(a_k > a_{k+1}\) が成り立つことである。<br>
+        得点が \(k\) 点（\(1 \le k \le n-1\)）となる条件は、\(a_1 &lt; a_2 &lt; \dots &lt; a_k\) かつ \(a_k &gt; a_{k+1}\) が成り立つことである。<br>
         条件を満たす並べ方の総数を以下のように決定する。
       </p>
       <ol style="margin-left: 20px;">
         <li>最初の \(k+1\) つの位置に配置する \(k+1\) 枚のカードの選び方は \({}_n\mathrm{C}_{k+1}\) 通り。</li>
-        <li>選ばれた \(k+1\) 枚の中で最大の値は \(a_k\) に確定する。残りの \(k\) 枚のうち \(a_{k+1}\) に入る数の選び方は \(k\) 通り。残った \(k-1\) 枚の数は \(a_1 < a_2 < \dots < a_{k-1}\) に自動的（1通り）に配置される。</li>
+        <li>選ばれた \(k+1\) 枚の中で最大の値は \(a_k\) に確定する。残りの \(k\) 枚のうち \(a_{k+1}\) に入る数の選び方は \(k\) 通り。残った \(k-1\) 枚の数は \(a_1 &lt; a_2 &lt; \dots &lt; a_{k-1}\) に自動的（1通り）に配置される。</li>
         <li>残り \(n-(k+1)\) 枚のカードの並べ方は \((n-k-1)!\) 通り。</li>
       </ol>
       <p style="margin-top: 10px;">
@@ -681,7 +679,7 @@
         また、
       </p>
       <p>
-        \(a_{n+1} \ge \frac{1}{\sqrt{2}} > 0\) より \(2(a_{n+1} + 1) > 2\) であるから、
+        \(a_{n+1} \ge \frac{1}{\sqrt{2}} &gt; 0\) より \(2(a_{n+1} + 1) &gt; 2\) であるから、
         $$|a_{n+1} - 1| \le \frac{1}{2} |a_n - 1| \quad (n \ge 2)$$
         が得られる。
       </p>
@@ -714,11 +712,11 @@
     <div class="solution-body">
       <div class="section-title">(1) の解答</div>
       <p>
-        \(0 < x < \frac{\pi}{2}\) において \(0 < \sin x < 1\) より、各辺に \(\sin^{2n-1} x \) と \(\sin^{2n} x \) をそれぞれ掛けると、
-        $$0 < \sin^{2n+1} x < \sin^{2n} x < \sin^{2n-1} x$$
+        \(0 &lt; x &lt; \frac{\pi}{2}\) において \(0 &lt; \sin x &lt; 1\) より、各辺に \(\sin^{2n-1} x \) と \(\sin^{2n} x \) をそれぞれ掛けると、
+        $$0 &lt; \sin^{2n+1} x &lt; \sin^{2n} x &lt; \sin^{2n-1} x$$
         \(0\) から \(\frac{\pi}{2}\) まで定積分すると、
-        $$\int_0^{\frac{\pi}{2}} \sin^{2n+1} x \, dx < \int_0^{\frac{\pi}{2}} \sin^{2n} x \, dx < \int_0^{\frac{\pi}{2}} \sin^{2n-1} x \, dx$$
-        すなわち \(I_{2n+1} < I_{2n} < I_{2n-1}\) となる。<br>
+        $$\int_0^{\frac{\pi}{2}} \sin^{2n+1} x \, dx &lt; \int_0^{\frac{\pi}{2}} \sin^{2n} x \, dx &lt; \int_0^{\frac{\pi}{2}} \sin^{2n-1} x \, dx$$
+        すなわち \(I_{2n+1} &lt; I_{2n} &lt; I_{2n-1}\) となる。<br>
       </p>
 
       <div class="section-title">(2) の解答</div>
@@ -734,7 +732,7 @@
       <div class="section-title">(3) の解答</div>
       <p>
         (2) の結果より \(\displaystyle \frac{I_{2n-1}}{I_{2n+1}} = \frac{2n+1}{2n} = 1 + \frac{1}{2n}\) である。<br>
-        また、(1)で示した不等式より\(\displaystyle 1 < \frac{I_{2n}}{I_{2n+1}} < \frac{I_{2n-1}}{I_{2n+1}}\)であるから、\(\displaystyle \lim_{n \to \infty} \left(1 + \frac{1}{2n}\right) = 1\) であることと、はさみうちの原理より、
+        また、(1)で示した不等式より\(\displaystyle 1 &lt; \frac{I_{2n}}{I_{2n+1}} &lt; \frac{I_{2n-1}}{I_{2n+1}}\)であるから、\(\displaystyle \lim_{n \to \infty} \left(1 + \frac{1}{2n}\right) = 1\) であることと、はさみうちの原理より、
         $$\lim_{n \to \infty} \frac{I_{2n}}{I_{2n+1}} = 1$$
       </p>
 
@@ -746,9 +744,9 @@
         $$\frac{I_{2n}}{I_{2n+1}} = \frac{\{(2n)!\}^2 (2n+1) \pi}{2^{4n+1} (n!)^4}$$
         ここで \(\displaystyle a_n = \frac{n! e^n}{n^n \sqrt{n}}\) より \(\displaystyle n! = \frac{a_n n^n \sqrt{n}}{e^n}\) および \(\displaystyle (2n)! = \frac{a_{2n} (2n)^{2n} \sqrt{2n}}{e^{2n}}\) を代入して整理すると、
         $$\frac{I_{2n}}{I_{2n+1}} = \frac{a_{2n}^2}{a_n^4} \left(2 + \frac{1}{n}\right) \pi$$
-        両辺の \(n \to \infty\) における極限をとると、(3) の結果および \(\displaystyle \lim_{n \to \infty} a_n = C\)（\(C > 0\)）より、
+        両辺の \(n \to \infty\) における極限をとると、(3) の結果および \(\displaystyle \lim_{n \to \infty} a_n = C\)（\(C &gt; 0\)）より、
         $$1 = \frac{C^2}{C^4} \cdot 2\pi = \frac{2\pi}{C^2}$$
-        \(C > 0\) より、\(C = \sqrt{2\pi}\) である。
+        \(C &gt; 0\) より、\(C = \sqrt{2\pi}\) である。
       </p>
 
       <div class="final-answer-box">
@@ -768,98 +766,54 @@
     <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
     <div class="answer-title">空間図形1 - 解答・解説</div>
     <div class="solution-body">
-      <div class="section-title">最短経路の候補</div>
-      <p>\(P=(x,y,a)\)（\(0\le x\le1,\ 0\le y\le1\)）とする。以下、面 \(OAED,OCGD,ABFE,BCGF\) を、それぞれ前面、左側面、右側面、背面と呼ぶ。</p>
-      <p>まず、次の4つの展開図で、\(O\) と \(P\) を結ぶ線分の長さを考える。</p>
-      <p>前面から上面に至る場合：</p>
-      $$l_1=\sqrt{x^2+(a+y)^2}$$
-      <p>左側面から上面に至る場合：</p>
-      $$l_2=\sqrt{(a+x)^2+y^2}$$
-      <p>前面、右側面、上面の順に進む場合：</p>
-      $$l_3=\sqrt{(1+y)^2+(a+1-x)^2}$$
-      <p>左側面、背面、上面の順に進む場合：</p>
-      $$l_4=\sqrt{(1+x)^2+(a+1-y)^2}$$
-      <p>これらを用いると、最短距離は</p>
-      <div class="numbered-equation"><span class="equation-math">\(\displaystyle l=\min(l_1,l_2,l_3,l_4)\)</span><span class="equation-number" aria-label="式①">…①</span></div>
-      <p>と表せる。経路の網羅と、展開図上の線分が実際の経路になる条件を、次に確認する。</p>
+      <div class="section-title">最短経路を平面で考える</div>
+      <p>面 \(ABC\) 以外の3面は、いずれも \(O\) を含む。\(O\) から \(P\) への経路が初めて面 \(ABC\) に達する点を \(Q\) とする。</p>
+      <p>\(Q\) は面 \(ABC\) の辺上にあり、\(O,Q\) をともに含む側面がある。したがって、\(Q\) までの経路は、その側面内の線分 \(OQ\) で置き換えても長くならない。また、\(Q\) から先は面 \(ABC\) 内の線分 \(QP\) で置き換えてよい。</p>
+      <p>よって、側面を1つ通ってから面 \(ABC\) に入る3通りの経路だけを考えれば十分である。</p>
+      <p>面 \(ABC\) を平面上に置き、3つの側面をそれぞれ外側に開く。このときの \(O\) の移った点を、辺 \(BC,CA,AB\) に対応させて \(O_1,O_2,O_3\) とする。</p>
+      <p>各線分 \(O_iP\) は対応する辺を横切り、展開した2面の中を通るので、実際の経路になる。したがって、</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle l=\min\{O_1P,O_2P,O_3P\}\)</span><span class="equation-number" aria-label="式①">…①</span></div>
 
-      <div class="section-title">①が成り立つ理由</div>
-      <p>同じ面上の2点を結ぶ経路は、その面内の線分で置き換えても長くならない。したがって、最短経路では同じ面に戻る必要はなく、上面に達した後は上面内の線分で \(P\) に向かえばよい。</p>
-      <p>また、底面・前面・左側面はいずれも \(O\) を含む。途中でこれらの面に入る場合は、そこまでの経路を \(O\) からその面内の線分に置き換えられる。よって、この3面のうち最初に進む面を1つ選び、その後は右側面・背面・上面のみを通る経路を調べれば十分である。辺に沿う経路も、隣接する面のいずれかに含めて考える。</p>
-      <p>先の4経路以外に残るのは、次の6経路である。表中の \(L\) は、各経路の面を展開したときの \(O,P\) 間の直線距離である。実際の経路の長さは \(L\) 以上である。</p>
-      <table style="width:100%; border-collapse:collapse; margin:12px 0; font-size:9pt;">
-        <thead><tr><th style="border-bottom:1px solid #999; padding:6px; text-align:left;">通る面の順序</th><th style="border-bottom:1px solid #999; padding:6px;">\(L^2\)</th></tr></thead>
-        <tbody>
-          <tr><td style="padding:6px;">前 → 右 → 後 → 上</td><td style="padding:6px;">\((3-x)^2+(a+1-y)^2\)</td></tr>
-          <tr><td style="padding:6px;">左 → 後 → 右 → 上</td><td style="padding:6px;">\((3-y)^2+(a+1-x)^2\)</td></tr>
-          <tr><td style="padding:6px;">底 → 右 → 上</td><td style="padding:6px;">\(y^2+(a+2-x)^2\)</td></tr>
-          <tr><td style="padding:6px;">底 → 後 → 上</td><td style="padding:6px;">\(x^2+(a+2-y)^2\)</td></tr>
-          <tr><td style="padding:6px;">底 → 右 → 後 → 上</td><td style="padding:6px;">\((2-x)^2+(a+2-y)^2\)</td></tr>
-          <tr><td style="padding:6px;">底 → 後 → 右 → 上</td><td style="padding:6px;">\((2-y)^2+(a+2-x)^2\)</td></tr>
-        </tbody>
-      </table>
-      <p>第1行は \(3-x\ge1+x\) より \(L\ge l_4\)、第2行は同様に \(L\ge l_3\) となる。</p>
-      <p>第3行については、</p>
-      $$L^2-l_3^2=2(a+1-x-y)>0$$
-      <p>である。ここで \(a&gt;1,\ x+y\le2\) を用いた。第4行も同様に \(L^2-l_4^2>0\) である。</p>
-      <p>第5行については、</p>
-      $$L^2-l_1^2=4(1-x)+4(a+1)(1-y)\ge0$$
-      <p>である。第6行も同様に \(L^2-l_2^2\ge0\) である。以上より、どの経路の長さも \(\min(l_1,l_2,l_3,l_4)\) 以上となる。</p>
-      <p>一方、\(l_1,l_2\) の線分は常に実際の経路になる。\(l_3\) の線分が前面と右側面の境界を高さ \(a\) 以下で横切る条件は、</p>
-      $$\frac{a+1-x}{1+y}\le a\quad\Longleftrightarrow\quad1-x\le ay$$
-      <p>である。この条件が成り立つときは \(l_3\) も実際の経路になる。成り立たないときは、</p>
-      $$l_3^2-l_1^2=2\{(a+1)(1-x)-(a-1)y\}>0$$
-      <p>なので、\(l_3\) は4つの最小値にならない。同様に、\(l_4\) が実際の経路になる条件は \(1-y\le ax\) であり、成り立たないときは \(l_4>l_2\) となる。</p>
-      <p>したがって、4つの最小値は実際の経路で達成される。これで①が示された。</p>
+      <div class="section-title">対称性を利用して範囲を絞る</div>
+      <p>この平面上に座標をとり、</p>
+      $$A=(0,\sqrt3),\quad B=(-1,0),\quad C=(1,0)$$
+      <p>とする。側面も1辺の長さが \(2\) の正三角形なので、</p>
+      $$O_1=(0,-\sqrt3),\quad O_2=(2,\sqrt3),\quad O_3=(-2,\sqrt3)$$
+      <p>である。\(P=(x,y)\) とおくと、\(y\ge0\) であり、</p>
+      $$O_1P^2=x^2+(y+\sqrt3)^2$$
+      $$O_2P^2=(x-2)^2+(y-\sqrt3)^2$$
+      $$O_3P^2=(x+2)^2+(y-\sqrt3)^2$$
+      <p>となる。図形の回転対称性より、3つの距離のうち \(O_1P\) が最小となる場合を考えれば十分である。同じ最小値をとる距離が複数ある場合も含める。</p>
+      <p>距離の2乗の差をとると、</p>
+      $$O_1P^2-O_2P^2=4(x+\sqrt3y-1)$$
+      $$O_1P^2-O_3P^2=4(-x+\sqrt3y-1)$$
+      <p>であるから、\(O_1P\le O_2P,\ O_1P\le O_3P\) より、</p>
+      $$|x|+\sqrt3y\le1$$
+      <p>を得る。\(y\ge0\) と合わせると、</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle 0\le y\le\frac1{\sqrt3},\qquad |x|\le1-\sqrt3y\)</span><span class="equation-number" aria-label="式②">…②</span></div>
+      <p>となる。この範囲は、\(G=(0,1/\sqrt3)\) を頂点とする三角形 \(BCG\) である。なお、\(G\) は三角形 \(ABC\) の重心である。</p>
 
-      <div class="section-title">最短距離の最大化</div>
-      <p>対称性より、\(0\le x\le y\le1\) の範囲を考えればよい。このとき、</p>
-      $$l_1^2-l_2^2=2a(y-x)\ge0$$
-      $$l_3^2-l_4^2=2(a+2)(y-x)\ge0$$
-      <p>であるから、①より</p>
-      $$l^2=\min\{(a+x)^2+y^2,\ (1+x)^2+(a+1-y)^2\}$$
-      <p>となる。\(x\) を固定すると、前者は \(y\) に関して増加し、後者は減少する。両者が等しくなるのは、</p>
-      $$y=1-\frac{a-1}{a+1}x$$
-      <p>のときである。ここで、</p>
-      $$t=\frac{a+1}{2a}\qquad\left(\frac12<t<1\right)$$
-      <p>とおく。この交点が許容範囲 \(x\le y\le1\) に入るのは、\(0\le x\le t\) の場合に限られる。</p>
-
-      <p style="margin-top:12px;"><strong>① \(0\le x\le t\) の場合</strong></p>
-      <p>固定した \(x\) に対し、両者が等しくなるところで \(l^2\) が最大となり、その値は</p>
-      $$h(x)=(a+x)^2+\left(1-\frac{a-1}{a+1}x\right)^2$$
-      <p>である。\(r=(a-1)/(a+1)\) とおけば \(0<r<1\) であり、</p>
-      $$h'(x)=2\{a-r+(1+r^2)x\}>0$$
-      <p>となる。よって、この範囲での最大値は \(x=y=t\) のときにとる。</p>
-
-      <p style="margin-top:12px;"><strong>② \(t\le x\le1\) の場合</strong></p>
-      <p>\(y\ge x\) より、</p>
-      $$l_2^2-l_4^2=2\{(a-1)x+(a+1)y-(a+1)\}\ge0$$
-      <p>となるので、\(l^2=l_4^2\) である。これは \(y\) に関して減少するから、固定した \(x\) に対して \(y=x\) のとき最大となる。その値を</p>
-      $$k(x)=(1+x)^2+(a+1-x)^2$$
-      <p>とおく。\(k(x)\) は \(x^2\) の係数が正の2次関数なので、区間 \([t,1]\) での最大値は端点 \(x=t,1\) のいずれかでとる。区間内部では端点の最大値より小さい。</p>
-
-      <p style="margin-top:12px;">以上より、最大となる点の候補は \((t,t,a)\) と \((1,1,a)\) の2点である。これらはともに \(x=y\) 上にあるため、対称な領域にも別の候補は生じない。</p>
-      <p>それぞれの距離の2乗は、</p>
-      $$h(t)=k(t)=\frac{(a^2+1)(2a^2+2a+1)}{2a^2},\qquad k(1)=a^2+4$$
-      <p>であり、差をとると、</p>
-      $$h(t)-k(1)=\frac{(a-1)(2a^2-3a-1)}{2a^2}$$
-      <p>となる。そこで、</p>
-      $$c=\frac{3+\sqrt{17}}4$$
-      <p>とおくと、\(1<a<c\) では \(h(t)<k(1)\)、\(a=c\) では等しく、\(a>c\) では \(h(t)>k(1)\) となる。</p>
-
+      <div class="section-title">最大値と等号成立条件</div>
+      <p>①、②より、</p>
+      $$\begin{aligned}
+      l^2&=O_1P^2\\
+      &=x^2+(y+\sqrt3)^2\\
+      &\le(1-\sqrt3y)^2+(y+\sqrt3)^2\\
+      &=4+4y^2\\
+      &\le4+4\left(\frac1{\sqrt3}\right)^2\\
+      &=\frac{16}{3}
+      \end{aligned}$$
+      <p>等号が成立するのは \(y=1/\sqrt3\) のときであり、②より、このとき \(x=0\) である。すなわち \(P=G\) のときに限る。</p>
+      <p>実際に \(P=G\) とすると、3つの距離はすべて \(4/\sqrt3\) となる。\(G\) は回転によって動かないので、残りの対称な範囲にも別の等号成立点はない。</p>
       <div class="final-answer-box">
         <div class="final-answer-title">【答】</div>
-        <p>\(\displaystyle c=\frac{3+\sqrt{17}}4,\quad t=\frac{a+1}{2a}\) とおく。</p>
-        <p style="margin-top:10px;">\(1<a<c\) のとき：</p>
-        $$P=(1,1,a),\qquad l_{\max}=\sqrt{a^2+4}$$
-        <p>\(a=c\) のとき：</p>
-        $$P=(1,1,a)\ \text{または}\ (t,t,a),\qquad l_{\max}=\sqrt{a^2+4}$$
-        <p>\(a>c\) のとき：</p>
-        $$P=(t,t,a),\qquad l_{\max}=\frac{\sqrt{2(a^2+1)(2a^2+2a+1)}}{2a}$$
+        <p>最大値は \(\displaystyle \frac{4\sqrt3}{3}\)</p>
+        <p>その最大値をとるのは、\(P\) が面 \(ABC\) の重心にあるとき。</p>
       </div>
       <div class="section-title">【解答へのアプローチ】</div>
-      <p>まず、展開図上の直線距離を比較して、点 \(P\) ごとの最短距離を求める。複数の面を通る経路や底面を通る経路も検討し、候補を省略できる理由を確認する。</p>
-      <p>次に、対称性を使って \(y\ge x\) に絞ると、増加する関数と減少する関数の小さい方を最大化する問題になる。ただし、両者の交点が許容範囲に入らない場合には、境界 \(y=x\) も調べなければならない。最後に2つの候補の値を比較すると、\(a\) による場合分けが現れる。</p>
+      <p>表面上の最短経路は、面を開いて平面上の線分として考える。ただし、どの面を通るかによって長さが異なるため、3つの距離のうち最も短いものを比較する必要がある。</p>
+      <p>対称性から重心が候補と予想できるが、それだけでは最大性の証明にはならない。「どの距離が最小か」によって三角形を3つの範囲に分け、そのうち1つで上限を示すのがポイントである。</p>
+      <p>頂点 \(A,B,C\) では最短距離は \(2\) であるのに対し、重心では \(4\sqrt3/3\) となる。表面に沿って進む場合には、面の内部の点が最も遠くなる。</p>
     </div>
   </div>
 </div>
@@ -874,8 +828,8 @@
     <div class="solution-body">
       <div class="section-title">【解答・解説】</div>
       <p>
-        \(f(x) = x \log x \ (x > 0)\) とおく。<br>
-        \(f'(x) = \log x + 1\), \(f''(x) = \frac{1}{x} > 0\) より、\(y = f(x)\) は \(x > 0\) において下に凸な関数である。……①
+        \(f(x) = x \log x \ (x &gt; 0)\) とおく。<br>
+        \(f'(x) = \log x + 1\), \(f''(x) = \frac{1}{x} &gt; 0\) より、\(y = f(x)\) は \(x &gt; 0\) において下に凸な関数である。……①
       </p>
       <p>
         \(x = \frac{1}{n}\) における \(y = f(x)\) の接線の方程式は、
@@ -883,7 +837,7 @@
         $$y = (1 - \log n)x - \frac{1}{n}$$
       </p>
       <p>
-        ①より、接線は常に曲線 \(y = f(x)\) の下側に位置するため、すべての \(x > 0\) に対して次の不等式が成り立つ。
+        ①より、接線は常に曲線 \(y = f(x)\) の下側に位置するため、すべての \(x &gt; 0\) に対して次の不等式が成り立つ。
         $$x \log x \ge (1 - \log n)x - \frac{1}{n} \quad \dots\dots ②$$
       </p>
       <p>
@@ -1160,6 +1114,7 @@
 
 </body>
 </html>
+
 
 
 
