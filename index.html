@@ -384,6 +384,10 @@
       <ul class="news-list">
         <li class="news-item">
           <span class="news-date">2026.10.11</span>
+          <span class="news-text">「平面図形1」を追加しました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026.10.11</span>
           <span class="news-text">空間図形の問題に不備があったため、問題を非公開にしました。申し訳ありません。</span>
         </li>
         <li class="news-item">
@@ -436,6 +440,10 @@
         <div class="card-title">整数1</div>
         <div class="card-footer">問題を開く &rarr;</div>
       </div>
+      <div class="card" role="button" tabindex="0" onclick="showView('problem8-view')">
+        <div class="card-title">平面図形1</div>
+        <div class="card-footer">問題を開く &rarr;</div>
+      </div>
     </div>
 
     <!-- 解答・解説セクション -->
@@ -463,6 +471,10 @@
       </div>
       <div class="card" role="button" tabindex="0" onclick="showView('answer7-view')">
         <div class="card-title">整数1</div>
+        <div class="card-footer">解答を開く &rarr;</div>
+      </div>
+      <div class="card" role="button" tabindex="0" onclick="showView('answer8-view')">
+        <div class="card-title">平面図形1</div>
         <div class="card-footer">解答を開く &rarr;</div>
       </div>
     </div>
@@ -1035,8 +1047,91 @@
   </div>
 </div>
 
+<!-- ==================== 問題 8 ==================== -->
+<div id="problem8-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="problem-title">平面図形1</div>
+    <div class="problem-body">
+      <p>三角形 \(ABC\) と、点 \(A\) を中心とする半径 \(1\) の円 \(\Gamma\) がある。</p>
+      <p>点 \(P\) が円 \(\Gamma\) 上を動くとき、点 \(P\) から直線 \(BC,CA,AB\) に下ろした垂線の足を、それぞれ \(D,E,F\) とする。また、点 \(Q\) を</p>
+      $$7\overrightarrow{AQ}=3\overrightarrow{AD}+2\overrightarrow{AE}+2\overrightarrow{AF}$$
+      <p>によって定める。</p>
+      <p>このとき、点 \(Q\) の軌跡が円となるための必要十分条件は</p>
+      $$AB=AC=\sqrt2\,BC$$
+      <p>であることを証明せよ。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 解答 8 ==================== -->
+<div id="answer8-view" class="view problem-view-wrapper" style="display: none;">
+  <div class="page">
+    <button class="back-btn" onclick="showView('home-view')">← 一覧に戻る</button>
+    <div class="answer-title">平面図形1 - 解答・解説</div>
+    <div class="solution-body">
+      <p>\(A\) を原点とし、\(\angle BAC\) の内角の二等分線を \(x\) 軸の正の向きにとる。\(AB,AC\) がそれぞれ \(x\) 軸となす角を \(\theta,-\theta\) とする。ただし、\(0&lt;\theta&lt;\pi/2\) である。</p>
+      <p>\(A\) から直線 \(BC\) に下ろした垂線の足を \(H\)、直線 \(BC\) の単位方向ベクトルを \((u,v)\) とおく。\(B,C\) は \(x\) 軸の上下にあるので、</p>
+      $$u^2+v^2=1,\qquad v\ne0$$
+      <p>である。\(P=(\cos t,\sin t)\) とおく。垂線の足の性質から、</p>
+      $$\overrightarrow{AD}=\overrightarrow{AH}+(u\cos t+v\sin t)(u,v)$$
+      <p>また、\(AB,AC\) 方向の単位ベクトル \((\cos\theta,\pm\sin\theta)\) を用いると、</p>
+      $$\begin{aligned}
+      \overrightarrow{AE}
+      &=(\cos\theta\cos t-\sin\theta\sin t)(\cos\theta,-\sin\theta)\\
+      \overrightarrow{AF}
+      &=(\cos\theta\cos t+\sin\theta\sin t)(\cos\theta,\sin\theta)
+      \end{aligned}$$
+      <p>となるので、</p>
+      $$2\overrightarrow{AE}+2\overrightarrow{AF}
+      =(4\cos^2\theta\cos t,\ 4\sin^2\theta\sin t)$$
+      <p>を得る。ここで、\(\overrightarrow{AK}=\dfrac37\overrightarrow{AH}\) となる点 \(K\) をとり、</p>
+      $$\alpha=\frac{4\cos^2\theta+3u^2}{7},\qquad
+      \beta=\frac{3uv}{7},\qquad
+      \gamma=\frac{4\sin^2\theta+3v^2}{7}$$
+      <p>とおけば、\(Q\) の定義から、</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle \overrightarrow{KQ}
+      =(\alpha\cos t+\beta\sin t,\ \beta\cos t+\gamma\sin t)\)</span><span class="equation-number" aria-label="式①">…①</span></div>
+      <p>となる。なお、</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle \alpha&gt;0,\quad\gamma&gt;0,\quad\alpha+\gamma=1\)</span><span class="equation-number" aria-label="式②">…②</span></div>
+      <p>が成り立つ。</p>
+
+      <p style="margin-top:16px;">まず、\(Q\) の軌跡が円であると仮定する。①で \(t\) を \(t+\pi\) に変えると \(\overrightarrow{KQ}\) の向きが反対になるから、軌跡は \(K\) に関して点対称である。したがって、この円の中心は \(K\) である。</p>
+      <p>\(t=0,\pi/2\) における \(KQ^2\) が等しいことから、</p>
+      $$\alpha^2+\beta^2=\beta^2+\gamma^2$$
+      <p>よって、②より \(\alpha=\gamma=1/2\) である。さらに、\(t=\pi/4,3\pi/4\) における \(KQ^2\) を比較すると、</p>
+      $$\frac{(\alpha+\beta)^2+(\beta+\gamma)^2}{2}
+      =\frac{(-\alpha+\beta)^2+(-\beta+\gamma)^2}{2}$$
+      <p>すなわち \(2\beta(\alpha+\gamma)=0\) なので、\(\beta=0\) となる。</p>
+      <p>\(\beta=3uv/7=0\) と \(v\ne0\) より \(u=0\)。したがって、\(BC\) は \(\angle BAC\) の二等分線に垂直であり、\(AB=AC\) である。</p>
+      <p>また、\(v^2=1\) および \(\alpha=\gamma\) より、</p>
+      $$4\cos^2\theta=4\sin^2\theta+3$$
+      <p>だから、\(\cos2\theta=3/4\) である。余弦定理から、</p>
+      $$BC^2=2AB^2(1-\cos2\theta)=\frac{AB^2}{2}$$
+      <p>となり、\(AB=AC=\sqrt2\,BC\) を得る。</p>
+
+      <p style="margin-top:16px;">逆に、\(AB=AC=\sqrt2\,BC\) とする。\(AB=AC\) より \(BC\) は \(x\) 軸に垂直なので、\(u=0,\ v^2=1\) である。また、余弦定理より、</p>
+      $$\cos2\theta=\frac{AB^2+AC^2-BC^2}{2AB\cdot AC}=\frac34$$
+      <p>であるから、\(\cos^2\theta=7/8,\ \sin^2\theta=1/8\) となる。したがって、</p>
+      $$\alpha=\gamma=\frac12,\qquad\beta=0$$
+      <p>となり、①は</p>
+      $$\overrightarrow{KQ}=\frac12(\cos t,\sin t)$$
+      <p>となる。\(t\) が \(0\le t&lt;2\pi\) を動くと、\(Q\) は \(K\) を中心とする半径 \(1/2\) の円全体を動く。以上より、必要十分条件が示された。</p>
+      <div class="final-answer-box">
+        <div class="final-answer-title">【結論】</div>
+        <p>\(Q\) の軌跡が円となるための必要十分条件は、\(AB=AC=\sqrt2\,BC\) である。</p>
+        <p>このとき、円の中心は \(\overrightarrow{AK}=\dfrac37\overrightarrow{AH}\) を満たす点 \(K\)、半径は \(1/2\) である。</p>
+      </div>
+      <div class="section-title">【解答へのアプローチ】</div>
+      <p>\(E,F\) の係数が等しいことに着目し、角の二等分線を座標軸に選ぶ。すると、\(2\overrightarrow{AE}+2\overrightarrow{AF}\) の計算で交差する項が消える。</p>
+      <p>軌跡が円なら、点対称の中心 \(K\) からの距離は一定である。\(t=0,\pi/2,\pi/4,3\pi/4\) の4点を比較して係数を絞り、最後に三角形の辺の条件に戻す。</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
+
 
 
 
