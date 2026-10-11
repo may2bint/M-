@@ -325,7 +325,9 @@
   }
 
 /* 式番号は数式処理を通さず、通常の文字として表示する */
-.equation-number {text-align:right; margin:0 0 12px; font-family:serif; font-size:10pt;}
+.numbered-equation {display:flex; align-items:center; justify-content:center; gap:0.75em; margin:1em 0;}
+.numbered-equation .equation-math {flex:0 0 auto;}
+.numbered-equation .equation-number {flex:0 0 auto; white-space:nowrap; font-family:serif; font-size:10pt;}
 </style>
 <script>
   function showView(viewId) {
@@ -905,61 +907,57 @@
     <div class="solution-body">
       <div class="section-title">(1) の解答</div>
       <p>積分区間を \(x=\dfrac{\pi}{4}\) で分け、後半で \(x=\dfrac{\pi}{2}-\theta\) と置換する。前半の積分変数も \(\theta\) と書けば、</p>
-      $$g(a)=\int_0^{\pi/4}\frac{d\theta}{\cos^2\theta+a^2\sin^2\theta}
-      +\int_0^{\pi/4}\frac{d\theta}{\sin^2\theta+a^2\cos^2\theta}.$$
-      <p class="equation-number" aria-label="式①">①</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle g(a)=\int_0^{\pi/4}\frac{d\theta}{\cos^2\theta+a^2\sin^2\theta}
+      +\int_0^{\pi/4}\frac{d\theta}{\sin^2\theta+a^2\cos^2\theta}\)</span><span class="equation-number" aria-label="式①">…①</span></div>
       <p>ここで、\(\tan\alpha=a,\ 0&lt;\alpha&lt;\dfrac{\pi}{2}\) となる角 \(\alpha\) をとる。</p>
       <p>①の第1項で \(a\tan\theta=\tan u\) と置換すると、</p>
-      $$\frac{a}{\cos^2\theta}\,d\theta=\frac{1}{\cos^2u}\,du.$$
+      $$\frac{a}{\cos^2\theta}\,d\theta=\frac{1}{\cos^2u}\,du$$
       <p>よって、</p>
       $$\begin{aligned}
       \int_0^{\pi/4}\frac{d\theta}{\cos^2\theta+a^2\sin^2\theta}
       &=\int_0^{\pi/4}\frac{d\theta}{\cos^2\theta(1+a^2\tan^2\theta)}\\
-      &=\frac1a\int_0^\alpha du=\frac{\alpha}{a}.
+      &=\frac1a\int_0^\alpha du=\frac{\alpha}{a}
       \end{aligned}$$
       <p>①の第2項では、\(\tan\theta=a\tan u\) と置換する。このとき、</p>
-      $$\frac{1}{\cos^2\theta}\,d\theta=\frac{a}{\cos^2u}\,du.$$
+      $$\frac{1}{\cos^2\theta}\,d\theta=\frac{a}{\cos^2u}\,du$$
       <p>また、\(\tan\left(\dfrac{\pi}{2}-\alpha\right)=\dfrac1a\) より、</p>
       $$\begin{aligned}
       \int_0^{\pi/4}\frac{d\theta}{\sin^2\theta+a^2\cos^2\theta}
       &=\int_0^{\pi/4}\frac{d\theta}{\cos^2\theta(\tan^2\theta+a^2)}\\
       &=\frac1a\int_0^{\pi/2-\alpha}du
-      =\frac{\pi/2-\alpha}{a}.
+      =\frac{\pi/2-\alpha}{a}
       \end{aligned}$$
       <p>以上から、</p>
-      $$g(a)=\frac{\pi}{2a}.$$
+      $$g(a)=\frac{\pi}{2a}$$
 
       <div class="section-title">(2) の解答</div>
       <p>\(\sin^2x+\cos^2x=1\) と (1) の結果より、</p>
-      $$A+B=g(a)=\frac{\pi}{2a}.$$
-      <p class="equation-number" aria-label="式②">②</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle A+B=g(a)=\frac{\pi}{2a}\)</span><span class="equation-number" aria-label="式②">…②</span></div>
       <p>また、</p>
-      $$A+a^2B=\int_0^{\pi/2}\frac{\cos^2x+a^2\sin^2x}{\cos^2x+a^2\sin^2x}\,dx=\frac{\pi}{2}.$$
-      <p class="equation-number" aria-label="式③">③</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle A+a^2B=\int_0^{\pi/2}\frac{\cos^2x+a^2\sin^2x}{\cos^2x+a^2\sin^2x}\,dx=\frac{\pi}{2}\)</span><span class="equation-number" aria-label="式③">…③</span></div>
       <p>\(a\ne1\) のとき、③から②を引いて、</p>
-      $$(a^2-1)B=\frac{\pi}{2}-\frac{\pi}{2a}=\frac{\pi(a-1)}{2a}.$$
+      $$(a^2-1)B=\frac{\pi}{2}-\frac{\pi}{2a}=\frac{\pi(a-1)}{2a}$$
       <p>したがって、</p>
-      $$B=\frac{\pi}{2a(a+1)}.$$
+      $$B=\frac{\pi}{2a(a+1)}$$
       <p>これを②に代入すると、</p>
-      $$A=\frac{\pi}{2(a+1)}.$$
+      $$A=\frac{\pi}{2(a+1)}$$
       <p>\(a=1\) のときは、</p>
       $$A=\int_0^{\pi/2}\cos^2x\,dx=\frac{\pi}{4},\qquad
       B=\int_0^{\pi/2}\sin^2x\,dx=\frac{\pi}{4}$$
       <p>となり、上の式に一致する。よって、</p>
-      $$A=\frac{\pi}{2(a+1)},\qquad B=\frac{\pi}{2a(a+1)}.$$
+      $$A=\frac{\pi}{2(a+1)},\qquad B=\frac{\pi}{2a(a+1)}$$
 
       <div class="section-title">(3) の解答</div>
       <p>\(x=\tan\dfrac{\theta}{2}\) と置換すると、</p>
-      $$0\leq\theta\leq\frac{\pi}{2},\qquad \frac{dx}{1+x^2}=\frac12\,d\theta.$$
+      $$0\leq\theta\leq\frac{\pi}{2},\qquad \frac{dx}{1+x^2}=\frac12\,d\theta$$
       <p>さらに、倍角公式から、</p>
       $$\frac{2x}{1+x^2}=\sin\theta,\qquad \frac{1-x^2}{1+x^2}=\cos\theta$$
       <p>であるから、</p>
-      $$f(a)=\frac a2\int_0^{\pi/2}\frac{\sin^2\theta\cos^2\theta}{\cos^2\theta+a^2\sin^2\theta}\,d\theta.$$
+      $$f(a)=\frac a2\int_0^{\pi/2}\frac{\sin^2\theta\cos^2\theta}{\cos^2\theta+a^2\sin^2\theta}\,d\theta$$
       <p>積分変数を \(x\) と書き直し、</p>
       $$J=\int_0^{\pi/2}\frac{\sin^2x\cos^2x}{\cos^2x+a^2\sin^2x}\,dx$$
       <p>とおけば、</p>
-      $$f(a)=\frac a2J.$$
-      <p class="equation-number" aria-label="式④">④</p>
+      <div class="numbered-equation"><span class="equation-math">\(\displaystyle f(a)=\frac a2J\)</span><span class="equation-number" aria-label="式④">…④</span></div>
       <p>ここで、</p>
       $$\cos^2x-\frac{\cos^2x}{\cos^2x+a^2\sin^2x}
       =\frac{(a^2-1)\sin^2x\cos^2x}{\cos^2x+a^2\sin^2x}$$
@@ -967,26 +965,26 @@
       $$\begin{aligned}
       (a^2-1)J&=\int_0^{\pi/2}\cos^2x\,dx-A\\
       &=\frac{\pi}{4}-\frac{\pi}{2(a+1)}
-      =\frac{\pi(a-1)}{4(a+1)}.
+      =\frac{\pi(a-1)}{4(a+1)}
       \end{aligned}$$
       <p>したがって、\(a\ne1\) のとき、</p>
-      $$J=\frac{\pi}{4(a+1)^2}.$$
+      $$J=\frac{\pi}{4(a+1)^2}$$
       <p>④より、</p>
-      $$f(a)=\frac{\pi a}{8(a+1)^2}.$$
+      $$f(a)=\frac{\pi a}{8(a+1)^2}$$
       <p>また、\(a=1\) のとき、</p>
       $$\begin{aligned}
       f(1)&=\frac12\int_0^{\pi/2}\sin^2x\cos^2x\,dx\\
       &=\frac1{16}\int_0^{\pi/2}(1-\cos4x)\,dx
-      =\frac{\pi}{32}.
+      =\frac{\pi}{32}
       \end{aligned}$$
       <p>これは上の式に \(a=1\) を代入した値と一致する。よって、</p>
-      $$f(a)=\frac{\pi a}{8(a+1)^2}.$$
+      $$f(a)=\frac{\pi a}{8(a+1)^2}$$
       <p>最後に、</p>
       $$f(a)=\frac{\pi}{8\left(a+2+\frac1a\right)}$$
       <p>と変形する。\(a&gt;0\) なので、相加相乗平均の関係より、</p>
-      $$a+\frac1a\geq2\sqrt{a\cdot\frac1a}=2.$$
+      $$a+\frac1a\geq2\sqrt{a\cdot\frac1a}=2$$
       <p>したがって、</p>
-      $$f(a)\leq\frac{\pi}{8(2+2)}=\frac{\pi}{32}.$$
+      $$f(a)\leq\frac{\pi}{8(2+2)}=\frac{\pi}{32}$$
       <p>\(a=1\) のとき等号が成立するため、求める最大値は \(\dfrac{\pi}{32}\) である。</p>
       <div class="final-answer-box">
         <div class="final-answer-title">【答】</div>
@@ -1004,6 +1002,7 @@
 
 </body>
 </html>
+
 
 
 
