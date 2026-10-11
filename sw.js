@@ -1,6 +1,6 @@
 'use strict';
 const PREFIX = 'mchart-app-';
-const CACHE = PREFIX + 'v4-unified-icons';
+const CACHE = PREFIX + 'v5-integral1';
 const ROOT = new URL('./', self.location.href).href;
 const SHELL = ['./','./index.html','./app.js','./manifest.webmanifest','./icon-192.png?v=4','./icon-512.png?v=4','./apple-touch-icon.png?v=4','./favicon.ico?v=4','./favicon-32x32.png?v=4','./favicon-48x48.png?v=4'];
 self.addEventListener('install', event => {
@@ -36,6 +36,7 @@ self.addEventListener('fetch', event => {
     }
   })());
 });
+
 
 
 

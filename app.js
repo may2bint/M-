@@ -12,7 +12,7 @@ installButton.addEventListener('click', async () => {
 window.addEventListener('appinstalled', () => {installButton.hidden = true; installPrompt = null;});
 function restoreView() {
   const id = location.hash.slice(1);
-  showView(/^((problem|answer)[1-5]|home)-view$/.test(id) ? id : 'home-view');
+  showView(/^((problem|answer)[1-6]|home)-view$/.test(id) ? id : 'home-view');
 }
 window.addEventListener('hashchange', restoreView);
 restoreView();
@@ -30,4 +30,5 @@ if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.
     navigator.serviceWorker.register('./sw.js').catch(error => console.warn('オフライン機能を有効にできませんでした', error));
   });
 }
+
 
